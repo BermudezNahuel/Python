@@ -91,7 +91,6 @@ while True:
 
     respuesta = int(input("\n Ingrese el numero del menu: "))
  
-
     if respuesta == 1:
         calcular_heroe_mas_alto()
     elif respuesta == 2:
