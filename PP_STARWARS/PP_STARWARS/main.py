@@ -28,8 +28,16 @@ def starwars_app():
         elif(respuesta=="2"):
             copia_lista = lista_normalizada[:]
             masculino = funciones.listar_por_genero(copia_lista,"male")
+            masculino = funciones.ordenar_personajes(masculino, "height")
             femenino = funciones.listar_por_genero(copia_lista,"female")
+            femenino = funciones.ordenar_personajes(femenino, "height")
             sin_genero =  funciones.listar_por_genero(copia_lista,"n/a")
+            sin_genero = funciones.ordenar_personajes(sin_genero, "height")
+            lista_genero = []
+            lista_genero.append(masculino[0])
+            lista_genero.append(femenino[0])
+            lista_genero.append(sin_genero[0])
+            contenido = funciones.mostrar_lista(lista_genero)
         elif(respuesta=="3"):
             print("\n")
             copia_lista = lista_normalizada[:]
