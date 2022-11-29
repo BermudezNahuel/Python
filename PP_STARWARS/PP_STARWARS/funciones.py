@@ -38,7 +38,6 @@ def mostrar_lista(lista:list[dict]):
     return mensaje
 
 
-
 def ordenar_personajes(lista:list[dict], key:str) -> list:
     '''
     Esta funcion se encarga de ordenar los personajes a partir de un
@@ -57,8 +56,6 @@ def ordenar_personajes(lista:list[dict], key:str) -> list:
     #print(lista)
     return lista
 
-#mostrar_lista(ordenar_personajes(copia_lista,"height"),"height")
-
 def listar_por_genero(lista:list,genero:str):
     '''
     Hace una lista con el genero indicado
@@ -73,19 +70,6 @@ def listar_por_genero(lista:list,genero:str):
     #print(lista_genero)
     return lista_genero
 
-#listar_por_genero(lista_copia, "male")
-
-
-def buscar_mas_alto(lista:list[dict], genero:str) -> str:
-    #lista_genero = listar_por_genero(lista, genero)
-    if lista:
-        max = lista[0]
-        for personaje in lista:
-            if personaje["height"] > max["height"] : 
-                max = personaje
-    print(max)
-    return max
-
 def buscador_personajes(lista:list[dict], patron:str):
     '''
     Realiza una busqueda en la lista por el nombre de personaje y lo retorna
@@ -95,7 +79,7 @@ def buscador_personajes(lista:list[dict], patron:str):
     if lista:
         lista_buscador = []
         for personaje in lista:
-            if re.search(patron, personaje["name"]):
+            if re.search(patron, personaje["name"],re.IGNORECASE):
                 lista_buscador.append(personaje)
                 # mensaje = "{0} - {1} - {2} - {3}".format(personaje["name"],personaje["height"],personaje["mass"],personaje["gender"])
         return lista_buscador
