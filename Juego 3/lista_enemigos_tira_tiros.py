@@ -2,7 +2,7 @@ import pygame
 from constantes import *
 from auxiliar import Auxiliar
 from enemigo_shooter import Enemigo_shooter
-from archivo_pract_1J import*
+from manager_json import *
 
 
 

@@ -9,16 +9,16 @@ def leer_json(path:str):
         lista = lista["nivel"]
         return (lista)
 
-lista_nivel = leer_json("practicaLaboProg1\Juego 3\data.json")
-dicc_screen = lista_nivel[0]["screen"]
-dicc_imagen_fondo = lista_nivel[1]["imagen_fondo"]
-dicc_enemigo_1 = lista_nivel[2]["enemigo_1"]
-dicc_enemigo_2 = lista_nivel[3]["enemigo_2"]
-dicc_vida_box = lista_nivel[4]["banana"]
-dicc_item_bala = lista_nivel[5]["arma"]
-dicc_player = lista_nivel[6]["player"]
-dicc_lista_walkers= lista_nivel[7]["lista_walkers"]
-dicc_plataformas= lista_nivel[8]
+nivel_1 = leer_json("C:/Users/Nahuel/Documents/TUP/P y L 1/programacion-y-laboratorio-1/Juego 3/data.json")
+dicc_screen = nivel_1[0]["screen"]
+dicc_imagen_fondo = nivel_1[1]["imagen_fondo"]
+dicc_enemigo_1 = nivel_1[2]["enemigo_1"]
+dicc_enemigo_2 = nivel_1[3]["enemigo_2"]
+dicc_vida_box = nivel_1[4]["banana"]
+dicc_item_bala = nivel_1[5]["arma"]
+dicc_player = nivel_1[6]["player"]
+dicc_lista_walkers= nivel_1[7]["lista_walkers"]
+
 
 
 
@@ -39,8 +39,7 @@ vb = dicc_vida_box
 ib= dicc_item_bala
 player = dicc_player
 lew = dicc_lista_walkers
-plat = dicc_plataformas
-print(lista_nivel)
+
 '''
 
 def screen():

@@ -3,9 +3,7 @@ import pygame
 from pygame.locals import *
 from constantes import*
 
-
-
-class Crear_json_2:
+class Crear_json_1:
    def __init__(self) -> None:
    
          self.data = {}
@@ -20,7 +18,7 @@ class Crear_json_2:
          )
          self.data["nivel"].append({"imagen_fondo":{"x":ANCHO_VENTANA,
                                                 "y":ALTO_VENTANA,
-                                                "path": "images\images\locations\set_bg_01\city/all.png"
+                                                "path": "images\images\locations\set_bg_01\mountain/all.png"
                                                 }
                                  }
          )
@@ -50,19 +48,19 @@ class Crear_json_2:
                                                 "x":500, 
                                                 "y":170, 
                                                 "gravity":10, 
-                                                "speed":10, 
-                                                "frame_rate_ms":75, 
+                                                "speed":13, 
+                                                "frame_rate_ms":100, 
                                                 "move_rate_ms":50,
-                                                "lives":2,
+                                                "lives":4,
                                                 "score":100}, 
                                              "stay":{ 
-                                                "path":"PIXEL ADVENTURE\Recursos\Enemies/Chicken\Idle (32x34).png", 
-                                                "col":13, 
+                                                "path":"PIXEL ADVENTURE\Recursos\Enemies/AngryPig/Idle (36x30).png", 
+                                                "col":9, 
                                                 "rows":1, 
                                                 "flip":1}, 
                                              "walk":{
-                                                "path":"PIXEL ADVENTURE\Recursos\Enemies/Chicken\Run (32x34).png", 
-                                                "col":14, 
+                                                "path":"PIXEL ADVENTURE\Recursos\Enemies/AngryPig/Run (36x30).png", 
+                                                "col":12, 
                                                 "rows":1, 
                                                 "flip":1
                                              }}})
@@ -71,28 +69,28 @@ class Crear_json_2:
          self.data["nivel"].append({"arma":{"path":"PIXEL ADVENTURE\Recursos/estrella.png","col":1,"rows":1,"x":[100,200,300,400,500,600,700,800,900],"y":575,"scale":0.1,"gravity":10, "frame_rate_ms":100, "move_rate_ms":50}})
 
          self.data["nivel"].append({"player":{"stay":{
-                                                   "path": "C:/Users/Nahuel/Documents/TUP/P y L 1/PIXEL ADVENTURE/Recursos/Main Characters/Mask Dude/Idle (32x32).png",
+                                                   "path": "C:/Users/Nahuel/Documents/TUP/programacion-y-laboratorio-1\/PIXEL ADVENTURE/Recursos/Main Characters/Ninja Frog/Idle (32x32).png",
                                                    "col": 11,
                                                    "rows": 1,
                                                    "flip_r":0, 
                                                    "flip_l":1 
                                                    },
                                           "walk":{
-                                                   "path": "C:/Users/Nahuel/Documents/TUP/P y L 1/PIXEL ADVENTURE/Recursos/Main Characters/Mask Dude/Run (32x32).png",
+                                                   "path": "C:/Users/Nahuel/Documents/TUP/programacion-y-laboratorio-1\/PIXEL ADVENTURE/Recursos/Main Characters/Ninja Frog/Run (32x32).png",
                                                    "col": 12,
                                                    "rows": 1,
                                                    "flip_r":0, 
                                                    "flip_l":1 
                                                    },
                                           "jump":{
-                                                   "path": "C:/Users/Nahuel/Documents/TUP/P y L 1/PIXEL ADVENTURE/Recursos/Main Characters/Mask Dude/Jump (32x32).png",
+                                                   "path": "C:/Users/Nahuel/Documents/TUP/programacion-y-laboratorio-1\/PIXEL ADVENTURE/Recursos/Main Characters/Ninja Frog/Jump (32x32).png",
                                                    "col": 1,
                                                    "rows":1 ,
                                                    "flip_r":0, 
                                                    "flip_l":1 
                                                    },
                                           "hit":{
-                                                   "path": "C:/Users/Nahuel/Documents/TUP/P y L 1/PIXEL ADVENTURE/Recursos/Main Characters/Mask Dude/Hit (32x32).png",
+                                                   "path": "C:/Users/Nahuel/Documents/TUP/programacion-y-laboratorio-1\/PIXEL ADVENTURE/Recursos/Main Characters/Ninja Frog/Hit (32x32).png",
                                                    "col": 7,
                                                    "rows": 7,
                                                    "flip_r":0, 
@@ -102,8 +100,8 @@ class Crear_json_2:
                                                    "x":400,
                                                    "y":600,
                                                    "lives":5,
-                                                   "speed_walk":8 ,
-                                                   "gravity":10 ,
+                                                   "speed_walk":6 ,
+                                                   "gravity":12 ,
                                                    "jump_power":15 ,
                                                    "frame_rate_ms":100 ,
                                                    "move_rate_ms":50 ,
@@ -114,27 +112,24 @@ class Crear_json_2:
                                                    "tiempo_spawn": 8000,
                                                    }})
 
-         with open('practicaLaboProg1/Juego 3/data.json', 'w') as file:
+         self.data["nivel"].append({"plataformas":{
+                                                   "p_1":{"x":0,"y":560,"w":150,"h":25,"type": 13},
+                                                   "p_6":{"x":0,"y":460,"w":150,"h":25,"type":13},
+                                                   "p_2":{"x":0,"y":360,"w":150,"h":25,"type":13},
+                                                   "p_3":{"x":850,"y":560,"w":150,"h":25,"type":13},
+                                                   "p_4":{"x":850,"y":460,"w":150,"h":25,"type":13},
+                                                   "p_5":{"x":850,"y":360,"w":150,"h":25,"type":13},
+                                                   "p_7":{"x":190,"y":400,"w":620,"h":25,"type":13},
+                                                   "p_8":{"x":190,"y":460,"w":150,"h":25,"type":13},
+                                                   "p_9":{"x":0,"y":190,"w":150,"h":25,"type":13},
+                                                   "p_10":{"x":0,"y":630,"w":1000,"h":25,"type":13}
+                                                   }})
+
+
+         with open('C:/Users/Nahuel/Documents/TUP/P y L 1/programacion-y-laboratorio-1/Juego 3/data.json','w') as file:
             json.dump(self.data, file, indent=4, ensure_ascii=False )
 
 '''
-{"dic_pig": {
-            "path_stay":"Enemies/AngryPig/Idle (36x30).png",
-            "columnas_stay":9,
-            "filas_stay":1,
-            "flip_stay":1,
-            "path_walk":"Enemies/AngryPig/Walk(36x30).png",
-            "columnas_walk":9,
-            "filas_walk":1,
-            "flip_walk":0,
-            }
-}
-path_stay =dic_pig["path_stay"]
-columnas_stay =dic_pig["columnas_stay"]
-filas_stay =dic_pig["filas_stay"]
-flip_stay =dic_pig["flip_stay"]
-path_walk =dic_pig["path_walk"]
-columnas_walk =dic_pig["columnas_walk"]
-filas_walk =dic_pig["filas_walk"]
-flip_walk =dic_pig["flip_walk"]                       
+usar_json = Crear_json_1()
+usar_json.update()
 '''

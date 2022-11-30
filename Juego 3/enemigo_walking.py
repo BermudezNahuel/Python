@@ -2,7 +2,7 @@ import pygame
 from constantes import *
 from master_enemigo import Enemigo_master
 from auxiliar import *
-from archivo_pract_1J import*
+from manager_json import *
 
 class Enemigo_walker(Enemigo_master):
     def __init__(self,  path_stay=ew_2["stay"]["path"], col_stay=ew_2["stay"]["col"],rows_stay=ew_2["stay"]["rows"],flip_stay=ew_2["stay"]["flip"], 

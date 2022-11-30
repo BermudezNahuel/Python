@@ -2,7 +2,7 @@ import pygame
 from constantes import *
 import random
 from enemigo_walking import*
-from archivo_pract_1J import*
+from manager_json import *
 
 
 

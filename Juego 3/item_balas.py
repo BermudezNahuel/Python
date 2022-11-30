@@ -3,7 +3,7 @@ import random
 from constantes import *
 from auxiliar import Auxiliar
 from master_gravedad import Gravedad
-from archivo_pract_1J import*
+from manager_json import *
 
 class Arma(Gravedad):
     def __init__(self,path=ib["path"],col=ib["col"],rows=ib["rows"],scale=ib["scale"],x=ib["x"],y=ib["y"],gravity=ib["gravity"],frame_rate_ms=vb["frame_rate_ms"],move_rate_ms=vb["move_rate_ms"]) -> None:

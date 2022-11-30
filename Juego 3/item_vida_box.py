@@ -3,7 +3,7 @@ import random
 from constantes import *
 from auxiliar import Auxiliar
 from master_gravedad import Gravedad
-from archivo_pract_1J import*
+from manager_json import *
 
 class Banana(Gravedad):
     def __init__(self,path=vb["path"],col=vb["col"],rows=vb["rows"],y=vb["y"],x=vb["x"],gravity=vb["gravity"],frame_rate_ms=vb["frame_rate_ms"],move_rate_ms=vb["move_rate_ms"]) -> None:

@@ -20,9 +20,9 @@ from status import*
 from jefe_uno import Jefe_uno
 from item_bala_list import Item_bala_list
 from item_vida_box_list import Item_vida_box_list
-from archivo_pract_1J import *
+from manager_json import *
 
-class FormComenzar(Form):
+class FormStartGame(Form):
     def __init__(self,name,master_surface,x,y,w,h,color_background,color_border,active):
         super().__init__(name,master_surface,x,y,w,h,color_background,color_border,active)
 

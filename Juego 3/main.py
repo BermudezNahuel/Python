@@ -15,7 +15,8 @@ from status import*
 from jefe_uno import Jefe_uno
 from item_bala_list import Item_bala_list
 from item_vida_box_list import Item_vida_box_list
-from crear_json import*
+from crear_json_level_1 import*
+from manager_json import *
 flags = DOUBLEBUF
 
 #llamo a json y almaceno en una variable todos los datos que se encuentran dentro de uno de los dict 
@@ -24,7 +25,7 @@ flags = DOUBLEBUF
 info_json = Crear_json_1()
 info_json.update()
 
-from archivo_pract_1J import *
+
 screen = pantalla
 
 pygame.init()

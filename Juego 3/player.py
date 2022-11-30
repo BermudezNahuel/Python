@@ -2,7 +2,7 @@ import pygame
 from constantes import *
 from auxiliar import Auxiliar
 from master_gravedad import*
-from archivo_pract_1J import *
+from manager_json import *
 
 class Player(Gravedad):
     def __init__(self, 
@@ -108,13 +108,13 @@ class Player(Gravedad):
             self.frame = 0
 
     def change_x(self, delta_x):
+        super().change_x(delta_x)
         self.bala_collition_rect.x += delta_x
-        return super().change_x(delta_x)
 
 
     def change_y(self, delta_y):
+        super().change_y(delta_y)
         self.bala_collition_rect.y += delta_y
-        return super().change_y(delta_y)
    
     def do_movement(self, delta_ms, plataform_list):
         self.tiempo_transcurrido_move += delta_ms

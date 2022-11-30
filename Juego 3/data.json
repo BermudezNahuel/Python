@@ -12,7 +12,7 @@
             "imagen_fondo": {
                 "x": 1000,
                 "y": 700,
-                "path": "images\\images\\locations\\set_bg_01\\city/all.png"
+                "path": "images\\images\\locations\\set_bg_01\\mountain/all.png"
             }
         },
         {
@@ -43,21 +43,21 @@
                     "x": 500,
                     "y": 170,
                     "gravity": 10,
-                    "speed": 10,
-                    "frame_rate_ms": 75,
+                    "speed": 13,
+                    "frame_rate_ms": 100,
                     "move_rate_ms": 50,
-                    "lives": 2,
+                    "lives": 4,
                     "score": 100
                 },
                 "stay": {
-                    "path": "PIXEL ADVENTURE\\Recursos\\Enemies/Chicken\\Idle (32x34).png",
-                    "col": 13,
+                    "path": "PIXEL ADVENTURE\\Recursos\\Enemies/AngryPig/Idle (36x30).png",
+                    "col": 9,
                     "rows": 1,
                     "flip": 1
                 },
                 "walk": {
-                    "path": "PIXEL ADVENTURE\\Recursos\\Enemies/Chicken\\Run (32x34).png",
-                    "col": 14,
+                    "path": "PIXEL ADVENTURE\\Recursos\\Enemies/AngryPig/Run (36x30).png",
+                    "col": 12,
                     "rows": 1,
                     "flip": 1
                 }
@@ -106,28 +106,28 @@
         {
             "player": {
                 "stay": {
-                    "path": "C:/Users/Nahuel/Documents/TUP/programacion-y-laboratorio-1\\/PIXEL ADVENTURE/Recursos/Main Characters/Mask Dude/Idle (32x32).png",
+                    "path": "C:/Users/Nahuel/Documents/TUP/programacion-y-laboratorio-1\\/PIXEL ADVENTURE/Recursos/Main Characters/Ninja Frog/Idle (32x32).png",
                     "col": 11,
                     "rows": 1,
                     "flip_r": 0,
                     "flip_l": 1
                 },
                 "walk": {
-                    "path": "C:/Users/Nahuel/Documents/TUP/programacion-y-laboratorio-1\\/PIXEL ADVENTURE/Recursos/Main Characters/Mask Dude/Run (32x32).png",
+                    "path": "C:/Users/Nahuel/Documents/TUP/programacion-y-laboratorio-1\\/PIXEL ADVENTURE/Recursos/Main Characters/Ninja Frog/Run (32x32).png",
                     "col": 12,
                     "rows": 1,
                     "flip_r": 0,
                     "flip_l": 1
                 },
                 "jump": {
-                    "path": "C:/Users/Nahuel/Documents/TUP/programacion-y-laboratorio-1\\/PIXEL ADVENTURE/Recursos/Main Characters/Mask Dude/Jump (32x32).png",
+                    "path": "C:/Users/Nahuel/Documents/TUP/programacion-y-laboratorio-1\\/PIXEL ADVENTURE/Recursos/Main Characters/Ninja Frog/Jump (32x32).png",
                     "col": 1,
                     "rows": 1,
                     "flip_r": 0,
                     "flip_l": 1
                 },
                 "hit": {
-                    "path": "C:/Users/Nahuel/Documents/TUP/programacion-y-laboratorio-1\\/PIXEL ADVENTURE/Recursos/Main Characters/Mask Dude/Hit (32x32).png",
+                    "path": "C:/Users/Nahuel/Documents/TUP/programacion-y-laboratorio-1\\/PIXEL ADVENTURE/Recursos/Main Characters/Ninja Frog/Hit (32x32).png",
                     "col": 7,
                     "rows": 7,
                     "flip_r": 0,
@@ -137,8 +137,8 @@
                     "x": 400,
                     "y": 600,
                     "lives": 5,
-                    "speed_walk": 8,
-                    "gravity": 10,
+                    "speed_walk": 6,
+                    "gravity": 12,
                     "jump_power": 15,
                     "frame_rate_ms": 100,
                     "move_rate_ms": 50,
@@ -151,6 +151,80 @@
             "lista_walkers": {
                 "cantidad": 20,
                 "tiempo_spawn": 8000
+            }
+        },
+        {
+            "plataformas": {
+                "p_1": {
+                    "x": 0,
+                    "y": 560,
+                    "w": 150,
+                    "h": 25,
+                    "type": 13
+                },
+                "p_6": {
+                    "x": 0,
+                    "y": 460,
+                    "w": 150,
+                    "h": 25,
+                    "type": 13
+                },
+                "p_2": {
+                    "x": 0,
+                    "y": 360,
+                    "w": 150,
+                    "h": 25,
+                    "type": 13
+                },
+                "p_3": {
+                    "x": 850,
+                    "y": 560,
+                    "w": 150,
+                    "h": 25,
+                    "type": 13
+                },
+                "p_4": {
+                    "x": 850,
+                    "y": 460,
+                    "w": 150,
+                    "h": 25,
+                    "type": 13
+                },
+                "p_5": {
+                    "x": 850,
+                    "y": 360,
+                    "w": 150,
+                    "h": 25,
+                    "type": 13
+                },
+                "p_7": {
+                    "x": 190,
+                    "y": 400,
+                    "w": 620,
+                    "h": 25,
+                    "type": 13
+                },
+                "p_8": {
+                    "x": 190,
+                    "y": 460,
+                    "w": 150,
+                    "h": 25,
+                    "type": 13
+                },
+                "p_9": {
+                    "x": 0,
+                    "y": 190,
+                    "w": 150,
+                    "h": 25,
+                    "type": 13
+                },
+                "p_10": {
+                    "x": 0,
+                    "y": 630,
+                    "w": 1000,
+                    "h": 25,
+                    "type": 13
+                }
             }
         }
     ]

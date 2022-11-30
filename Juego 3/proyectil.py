@@ -5,7 +5,7 @@ from auxiliar import Auxiliar
 
 class Proyectil:
     def __init__(self) -> None:
-        self.image = pygame.image.load("PIXEL ADVENTURE\Recursos/estrella.png")
+        self.image = pygame.image.load("PIXEL ADVENTURE/estrella.png")
         self.image = pygame.transform.scale(self.image,(15,15))
         self.rect = self.image.get_rect()
         #self.mostrar_bala = True

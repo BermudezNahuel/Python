@@ -5,22 +5,6 @@ from master_enemigo import Enemigo_master
 
 
 
-'''
-class Jefe_uno(Enemigo):
-    def __init__(self, x=500, y=0, direction = DIRECTION_R, gravity=10, frame_rate_ms=150, move_rate_ms=50) -> None:
-        super().__init__(x, y, direction, gravity, frame_rate_ms, move_rate_ms)
-        self.stay_r = Auxiliar.getSurfaceFromSpriteSheet("PIXEL ADVENTURE\Recursos\Enemies\AngryPig\Idle (36x30).png",9,1,True,scale=5)
-        self.stay_l = Auxiliar.getSurfaceFromSpriteSheet("PIXEL ADVENTURE\Recursos\Enemies\AngryPig\Idle (36x30).png",9,1,scale=5)
-
-    def update(self, delta_ms, plataform_list,bala,player):
-        self.stay()
-        self.do_movement(delta_ms,plataform_list)
-        self.do_animation(delta_ms)
-        self.colision_bala(bala)
-        self.colision_head(player)
-        self.definir_rect()
-'''
-
 class Jefe_uno(Enemigo_master):
     def __init__(self, x=400,y=0,direction=DIRECTION_R,gravity=14, frame_rate_ms=100, move_rate_ms=50) -> None:
         super().__init__(gravity, frame_rate_ms, move_rate_ms)
