@@ -1,0 +1,531 @@
+{
+    "nivel_1": {
+        "player": [{
+            "stay": {
+                "path": "PIXEL ADVENTURE\\Recursos\\Main Characters\\Ninja Frog\\Idle (32x32).png",
+                "col": 11,
+                "rows": 1,
+                "flip_r": 0,
+                "flip_l": 1
+            },
+            "walk": {
+                "path": "PIXEL ADVENTURE\\Recursos\\Main Characters\\Ninja Frog\\Run (32x32).png",
+                "col": 12,
+                "rows": 1,
+                "flip_r": 0,
+                "flip_l": 1
+            },
+            "jump": {
+                "path": "PIXEL ADVENTURE\\Recursos\\Main Characters\\Ninja Frog\\Jump (32x32).png",
+                "col": 1,
+                "rows": 1,
+                "flip_r": 0,
+                "flip_l": 1
+            },
+            "hit": {
+                "path": "PIXEL ADVENTURE\\Recursos\\Main Characters\\Ninja Frog\\Hit (32x32).png",
+                "col": 7,
+                "rows": 7,
+                "flip_r": 0,
+                "flip_l": 1
+            },
+            "char": {
+                "x": 400,
+                "y": 600,
+                "lives": 5,
+                "speed_walk": 6,
+                "gravity": 12,
+                "jump_power": 15,
+                "frame_rate_ms": 100,
+                "move_rate_ms": 50,
+                "jump_height": 60,
+                "interval_time_jump": 300
+            }
+        }],
+        "enemigos_walkers": [
+            {
+                "char": {
+                    "x": 500,
+                    "y": 170,
+                    "gravity": 10,
+                    "speed": 8,
+                    "frame_rate_ms": 200,
+                    "move_rate_ms": 50,
+                    "lives": 4,
+                    "score": 100
+                },
+                "stay": {
+                    "path": "PIXEL ADVENTURE\\Enemies\\AngryPig\\Idle (36x30).png",
+                    "col": 9,
+                    "rows": 1,
+                    "flip": 1
+                },
+                "walk": {
+                    "path": "PIXEL ADVENTURE\\Enemies\\AngryPig\\Walk (36x30).png",
+                    "col": 16,
+                    "rows": 1,
+                    "flip": 1
+                }
+            },
+            {
+                "char": {
+                    "x": 500,
+                    "y": 170,
+                    "gravity": 10,
+                    "speed": 8,
+                    "frame_rate_ms": 200,
+                    "move_rate_ms": 50,
+                    "lives": 4,
+                    "score": 100
+                },
+                "stay": {
+                    "path": "PIXEL ADVENTURE\\Enemies\\AngryPig\\Idle (36x30).png",
+                    "col": 9,
+                    "rows": 1,
+                    "flip": 1
+                },
+                "walk": {
+                    "path": "PIXEL ADVENTURE\\Enemies\\AngryPig\\Walk (36x30).png",
+                    "col": 16,
+                    "rows": 1,
+                    "flip": 1
+                }
+            },
+            {
+                "char": {
+                    "x": 500,
+                    "y": 170,
+                    "gravity": 10,
+                    "speed": 8,
+                    "frame_rate_ms": 200,
+                    "move_rate_ms": 50,
+                    "lives": 4,
+                    "score": 100
+                },
+                "stay": {
+                    "path": "PIXEL ADVENTURE\\Enemies\\AngryPig\\Idle (36x30).png",
+                    "col": 9,
+                    "rows": 1,
+                    "flip": 1
+                },
+                "walk": {
+                    "path": "PIXEL ADVENTURE\\Enemies\\AngryPig\\Walk (36x30).png",
+                    "col": 16,
+                    "rows": 1,
+                    "flip": 1
+                }
+            },
+            {
+                "char": {
+                    "x": 500,
+                    "y": 170,
+                    "gravity": 10,
+                    "speed": 8,
+                    "frame_rate_ms": 200,
+                    "move_rate_ms": 50,
+                    "lives": 4,
+                    "score": 100
+                },
+                "stay": {
+                    "path": "PIXEL ADVENTURE\\Enemies\\AngryPig\\Idle (36x30).png",
+                    "col": 9,
+                    "rows": 1,
+                    "flip": 1
+                },
+                "walk": {
+                    "path": "PIXEL ADVENTURE\\Enemies\\AngryPig\\Walk (36x30).png",
+                    "col": 16,
+                    "rows": 1,
+                    "flip": 1
+                }
+            },
+            {
+                "char": {
+                    "x": 500,
+                    "y": 170,
+                    "gravity": 10,
+                    "speed": 8,
+                    "frame_rate_ms": 200,
+                    "move_rate_ms": 50,
+                    "lives": 4,
+                    "score": 100
+                },
+                "stay": {
+                    "path": "PIXEL ADVENTURE\\Enemies\\AngryPig\\Idle (36x30).png",
+                    "col": 9,
+                    "rows": 1,
+                    "flip": 1
+                },
+                "walk": {
+                    "path": "PIXEL ADVENTURE\\Enemies\\AngryPig\\Walk (36x30).png",
+                    "col": 16,
+                    "rows": 1,
+                    "flip": 1
+                }
+            },
+            {
+                "char": {
+                    "x": 500,
+                    "y": 170,
+                    "gravity": 10,
+                    "speed": 8,
+                    "frame_rate_ms": 200,
+                    "move_rate_ms": 50,
+                    "lives": 4,
+                    "score": 100
+                },
+                "stay": {
+                    "path": "PIXEL ADVENTURE\\Enemies\\AngryPig\\Idle (36x30).png",
+                    "col": 9,
+                    "rows": 1,
+                    "flip": 1
+                },
+                "walk": {
+                    "path": "PIXEL ADVENTURE\\Enemies\\AngryPig\\Walk (36x30).png",
+                    "col": 16,
+                    "rows": 1,
+                    "flip": 1
+                }
+            }
+        ],
+        "enemigos_shooters": [
+            {
+                "x": 20,
+                "y": 175,
+                "direction": 1,
+                "path": "PIXEL ADVENTURE\\Enemies\\AngryPig\\Idle (36x30).png",
+                "columnas": 9,
+                "filas": 1,
+                "flip": 1,
+                "gravity":10,
+                "frame_rate_ms":200,
+                "move_rate_ms":50
+            },
+            {
+                "x": 20,
+                "y": 400,
+                "direction": 1,
+                "path": "PIXEL ADVENTURE\\Enemies\\AngryPig\\Idle (36x30).png",
+                "columnas": 9,
+                "filas": 1,
+                "flip": 1,
+                "gravity":10,
+                "frame_rate_ms":200,
+                "move_rate_ms":50
+            },
+            {
+                "x": 20,
+                "y": 475,
+                "direction": 1,
+                "path": "PIXEL ADVENTURE\\Enemies\\AngryPig\\Idle (36x30).png",
+                "columnas": 9,
+                "filas": 1,
+                "flip": 1,
+                "gravity":10,
+                "frame_rate_ms":200,
+                "move_rate_ms":50
+            },
+            {
+                "x": 950,
+                "y": 175,
+                "direction": 0,
+                "path": "PIXEL ADVENTURE\\Enemies\\AngryPig\\Idle (36x30).png",
+                "columnas": 9,
+                "filas": 1,
+                "flip": 0,
+                "gravity":10,
+                "frame_rate_ms":200,
+                "move_rate_ms":50
+            },
+            {
+                "x": 950,
+                "y": 400,
+                "direction": 0,
+                "path": "PIXEL ADVENTURE\\Enemies\\AngryPig\\Idle (36x30).png",
+                "columnas": 9,
+                "filas": 1,
+                "flip": 0,
+                "gravity":10,
+                "frame_rate_ms":200,
+                "move_rate_ms":50
+            },
+            {
+                "x": 950,
+                "y": 475,
+                "direction": 0,
+                "path": "PIXEL ADVENTURE\\Enemies\\AngryPig\\Idle (36x30).png",
+                "columnas": 9,
+                "filas": 1,
+                "flip": 0,
+                "gravity":10,
+                "frame_rate_ms":200,
+                "move_rate_ms":50
+            }
+        ],
+        "enemigo_boss": [{
+            "path_stay": "PIXEL ADVENTURE\\Enemies\\AngryPig\\Idle (36x30).png",
+            "col_stay": 9,
+            "rows_stay": 1,
+            "flip_stay_r": 1,
+            "flip_stay_l": 0,
+            "scale_stay": 5,
+            "path_hit": "PIXEL ADVENTURE\\Enemies\\AngryPig\\Hit 1 (36x30).png",
+            "col_hit": 5,
+            "rows_hit": 1,
+            "flip_hit_r": 1,
+            "flip_hit_l": 0,
+            "scale_hit": 5,
+            "x": 400,
+            "y": 0,
+            "direction": 1,
+            "gravity": 14,
+            "frame_rate_ms": 200,
+            "move_rate_ms": 50
+        }],
+        "balas": [
+            {
+                "path": "PIXEL ADVENTURE\\estrella.png",
+                "col": 1,
+                "rows": 1,
+                "x": [
+                    100,
+                    200,
+                    300,
+                    400,
+                    500,
+                    600,
+                    700,
+                    800,
+                    900
+                ],
+                "y": 575,
+                "scale": 0.1,
+                "gravity": 10,
+                "frame_rate_ms": 100,
+                "move_rate_ms": 50
+            },
+            {
+                "path": "PIXEL ADVENTURE\\estrella.png",
+                "col": 1,
+                "rows": 1,
+                "x": [
+                    100,
+                    200,
+                    300,
+                    400,
+                    500,
+                    600,
+                    700,
+                    800,
+                    900
+                ],
+                "y": 575,
+                "scale": 0.1,
+                "gravity": 10,
+                "frame_rate_ms": 100,
+                "move_rate_ms": 50
+            },
+            {
+                "path": "PIXEL ADVENTURE\\estrella.png",
+                "col": 1,
+                "rows": 1,
+                "x": [
+                    100,
+                    200,
+                    300,
+                    400,
+                    500,
+                    600,
+                    700,
+                    800,
+                    900
+                ],
+                "y": 575,
+                "scale": 0.1,
+                "gravity": 10,
+                "frame_rate_ms": 100,
+                "move_rate_ms": 50
+            },
+            {
+                "path": "PIXEL ADVENTURE\\estrella.png",
+                "col": 1,
+                "rows": 1,
+                "x": [
+                    100,
+                    200,
+                    300,
+                    400,
+                    500,
+                    600,
+                    700,
+                    800,
+                    900
+                ],
+                "y": 575,
+                "scale": 0.1,
+                "gravity": 10,
+                "frame_rate_ms": 100,
+                "move_rate_ms": 50
+            },
+            {
+                "path": "PIXEL ADVENTURE\\estrella.png",
+                "col": 1,
+                "rows": 1,
+                "x": [
+                    100,
+                    200,
+                    300,
+                    400,
+                    500,
+                    600,
+                    700,
+                    800,
+                    900
+                ],
+                "y": 575,
+                "scale": 0.1,
+                "gravity": 10,
+                "frame_rate_ms": 100,
+                "move_rate_ms": 50
+            },
+            {
+                "path": "PIXEL ADVENTURE\\estrella.png",
+                "col": 1,
+                "rows": 1,
+                "x": [
+                    100,
+                    200,
+                    300,
+                    400,
+                    500,
+                    600,
+                    700,
+                    800,
+                    900
+                ],
+                "y": 575,
+                "scale": 0.1,
+                "gravity": 10,
+                "frame_rate_ms": 100,
+                "move_rate_ms": 50
+            },
+            {
+                "path": "PIXEL ADVENTURE\\estrella.png",
+                "col": 1,
+                "rows": 1,
+                "x": [
+                    100,
+                    200,
+                    300,
+                    400,
+                    500,
+                    600,
+                    700,
+                    800,
+                    900
+                ],
+                "y": 575,
+                "scale": 0.1,
+                "gravity": 10,
+                "frame_rate_ms": 100,
+                "move_rate_ms": 50
+            },
+            {
+                "path": "PIXEL ADVENTURE\\estrella.png",
+                "col": 1,
+                "rows": 1,
+                "x": [
+                    100,
+                    200,
+                    300,
+                    400,
+                    500,
+                    600,
+                    700,
+                    800,
+                    900
+                ],
+                "y": 575,
+                "scale": 0.1,
+                "gravity": 10,
+                "frame_rate_ms": 100,
+                "move_rate_ms": 50
+            }
+        ],
+        "vida_item": [
+            {
+                "path": "PIXEL ADVENTURE\\Recursos\\Items\\Fruits\\Bananas.png",
+                "col": 17,
+                "rows": 1,
+                "x": [
+                    150,
+                    350,
+                    550,
+                    750
+                ],
+                "y": 590,
+                "gravity": 10,
+                "frame_rate_ms": 100,
+                "move_rate_ms": 50
+            },
+            {
+                "path": "PIXEL ADVENTURE\\Recursos\\Items\\Fruits\\Bananas.png",
+                "col": 17,
+                "rows": 1,
+                "x": [
+                    150,
+                    350,
+                    550,
+                    750
+                ],
+                "y": 590,
+                "gravity": 10,
+                "frame_rate_ms": 100,
+                "move_rate_ms": 50
+            },
+            {
+                "path": "PIXEL ADVENTURE\\Recursos\\Items\\Fruits\\Bananas.png",
+                "col": 17,
+                "rows": 1,
+                "x": [
+                    150,
+                    350,
+                    550,
+                    750
+                ],
+                "y": 590,
+                "gravity": 10,
+                "frame_rate_ms": 100,
+                "move_rate_ms": 50
+            }
+        ],
+        "proyectil":[{  
+            "path":"PIXEL ADVENTURE\\estrella.png",
+            "h":15,
+            "w":15
+        },
+        {  
+            "path":"PIXEL ADVENTURE\\estrella.png",
+            "h":15,
+            "w":15
+        },{  
+            "path":"PIXEL ADVENTURE\\estrella.png",
+            "h":15,
+            "w":15
+        },{  
+            "path":"PIXEL ADVENTURE\\estrella.png",
+            "h":15,
+            "w":15
+        },{  
+            "path":"PIXEL ADVENTURE\\estrella.png",
+            "h":15,
+            "w":15
+        },{  
+            "path":"PIXEL ADVENTURE\\estrella.png",
+            "h":15,
+            "w":15
+        }]
+    },
+    "nivel_2": {},
+    "nivel_3": {}
+}
