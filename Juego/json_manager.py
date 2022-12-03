@@ -3,18 +3,29 @@ from enemigo_walking import Enemigo_walker
 from enemigo_shooter import Enemigo_shooter
 from enemigo_boss import Enemigo_boss
 from player import Player
-from item_balas import Bala
-from item_vida_box import Vida_box
+from manager_item_bala import Item_bala
+from manager_item_vida_box import Vida_box
 from proyectil import Proyectil
+from plataforma import Plataform
 
 class Json_manager:
     def __init__(self,path,nivel_nombre) -> None:
         self.path = path
         self.config_nivel = self.leer_json(self.path)[nivel_nombre]
-        #Enemigos
+        
+        #Escenario
+        self.__imagen_fondo = self.config_nivel["imagen_fondo"]["path"]
+        
+        #Plataformas
+        self.__lista_plataformas_dicc = self.config_nivel["plataformas"]
+        self.__lista_plataformas = []
+        self.crear_plataformas()
+
+        #Enemigos:
         self.__lista_walkers_dicc = self.config_nivel["enemigos_walkers"]
         self.__lista_walkers = []
         self.crear_walkers()
+
         self.__lista_shooters_dicc = self.config_nivel["enemigos_shooters"]
         self.__lista_shooters = []
         self.crear_shooters()
@@ -26,10 +37,11 @@ class Json_manager:
         self.__player_dicc = self.config_nivel["player"]
         self.__player = []
         self.crear_player()
-        #proyectil
+        #proyectil del player
         self.__lista_proyectil_dicc = self.config_nivel["proyectil"]
         self.__lista_proyectil = []
         self.crear_proyectil()
+        #proyectil del enemigo
         self.__lista_proyectil_enemy_dicc = self.config_nivel["proyectil"]
         self.__lista_proyectil_enemy = []
         self.crear_proyectil_enemy()
@@ -48,6 +60,19 @@ class Json_manager:
     def leer_json(self,path:str):
         with open(path,"r") as archivo:
             return json.load(archivo)
+
+    def crear_plataformas(self):
+        for plataforma in self.__lista_plataformas_dicc:
+            self.__lista_plataformas.append(
+                Plataform(
+                    x=plataforma["x"],
+                    y=plataforma["y"],
+                    width=plataforma["width"],
+                    height=plataforma["height"],
+                    type=plataforma["type"],
+                )
+            )
+        self.__lista_plataformas_dicc.clear()
 
     def crear_walkers(self):
         for enemigo in self.__lista_walkers_dicc:
@@ -83,6 +108,7 @@ class Json_manager:
                             columnas=enemigo["columnas"],
                             filas=enemigo["filas"],
                             flip=enemigo["flip"],
+                            vidas=enemigo["vidas"],
                             gravity=enemigo["gravity"],
                             frame_rate_ms=enemigo["frame_rate_ms"],
                             move_rate_ms=enemigo["move_rate_ms"])
@@ -156,7 +182,7 @@ class Json_manager:
     def crear_balas(self):
         for bala in self.__lista_balas_dicc:
             self.__lista_balas.append(
-                Bala(
+                Item_bala(
                     path = bala["path"], 
                     col = bala["col"],
                     rows = bala["rows"],
@@ -189,13 +215,13 @@ class Json_manager:
 
 
     def crear_proyectil(self):
-        print("se llamo a crear proyectil")
         for proyectil in self.__lista_proyectil_dicc:
             self.__lista_proyectil.append(
                 Proyectil(
                         path=proyectil["path"],
                         w=proyectil["w"],
                         h=proyectil["h"],
+                        speed=proyectil["speed"]
                 )
             )
         return self.__lista_proyectil
@@ -208,6 +234,7 @@ class Json_manager:
                         path=proyectil["path"],
                         w=proyectil["w"],
                         h=proyectil["h"],
+                        speed=proyectil["speed"]
                 )
             )
         #self.__lista_proyectil_dicc.clear()
@@ -250,4 +277,12 @@ class Json_manager:
     @property
     def proyectil_enemy(self):
         return self.__lista_proyectil_enemy
+    
+    @property
+    def imagen_fondo(self):
+        return self.__imagen_fondo
+
+    @property
+    def plataformas(self):
+        return self.__lista_plataformas
 

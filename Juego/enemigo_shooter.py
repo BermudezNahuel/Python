@@ -6,16 +6,11 @@ from master_enemigo import*
 class Enemigo_shooter(Enemigo_master):
     
 
-    def __init__(self,x,y,direction,path,columnas,filas,flip,gravity=10,frame_rate_ms=150,move_rate_ms=50) -> None:
+    def __init__(self,x,y,direction,path,columnas,filas,flip,vidas,gravity=10,frame_rate_ms=150,move_rate_ms=50) -> None:
 
         self.stay_r = Auxiliar.getSurfaceFromSpriteSheet(path=path,columnas=columnas,filas=filas,flip=flip)
         self.stay_l = Auxiliar.getSurfaceFromSpriteSheet(path=path,columnas=columnas,filas=filas,flip=flip)
-
-        self.vidas = 1
         self.frame = 0
-        self.move_x = 0
-        self.move_y = 0
-        self.gravity = gravity
         self.animation = self.stay_r
         self.direction = direction
         self.image = self.animation[self.frame]
@@ -38,6 +33,10 @@ class Enemigo_shooter(Enemigo_master):
         self.disparo_collition_rect_r = pygame.Rect(x,y,300,GROUND_COLLIDE_H)
 
 
+        self.vidas = vidas
+        self.gravity = gravity
+        self.move_x = 0
+        self.move_y = 0
 
         self.is_fall = False
         self.eliminado = False

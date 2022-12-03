@@ -1,47 +1,126 @@
 {
     "nivel_1": {
-        "player": [{
-            "stay": {
-                "path": "PIXEL ADVENTURE\\Recursos\\Main Characters\\Ninja Frog\\Idle (32x32).png",
-                "col": 11,
-                "rows": 1,
-                "flip_r": 0,
-                "flip_l": 1
-            },
-            "walk": {
-                "path": "PIXEL ADVENTURE\\Recursos\\Main Characters\\Ninja Frog\\Run (32x32).png",
-                "col": 12,
-                "rows": 1,
-                "flip_r": 0,
-                "flip_l": 1
-            },
-            "jump": {
-                "path": "PIXEL ADVENTURE\\Recursos\\Main Characters\\Ninja Frog\\Jump (32x32).png",
-                "col": 1,
-                "rows": 1,
-                "flip_r": 0,
-                "flip_l": 1
-            },
-            "hit": {
-                "path": "PIXEL ADVENTURE\\Recursos\\Main Characters\\Ninja Frog\\Hit (32x32).png",
-                "col": 7,
-                "rows": 7,
-                "flip_r": 0,
-                "flip_l": 1
-            },
-            "char": {
-                "x": 400,
-                "y": 600,
-                "lives": 5,
-                "speed_walk": 6,
-                "gravity": 12,
-                "jump_power": 15,
-                "frame_rate_ms": 100,
-                "move_rate_ms": 50,
-                "jump_height": 60,
-                "interval_time_jump": 300
+        "imagen_fondo": 
+            {
+                "path": "images\\images\\locations\\set_bg_02\\Mar\\Background.png"
             }
-        }],
+        ,
+        "plataformas": [
+            {
+                "x": 0,
+                "y": 560,
+                "width": 150,
+                "height": 25,
+                "type": 13
+            },
+            {
+                "x": 190,
+                "y": 500,
+                "width": 620,
+                "height": 25,
+                "type": 13
+            },
+            {
+                "x": 850,
+                "y": 560,
+                "width": 150,
+                "height": 25,
+                "type": 13
+            },
+            {
+                "x": 0,
+                "y": 460,
+                "width": 150,
+                "height": 25,
+                "type": 13
+            },
+            {
+                "x": 190,
+                "y": 400,
+                "width": 620,
+                "height": 25,
+                "type": 13
+            },
+            {
+                "x": 850,
+                "y": 460,
+                "width": 150,
+                "height": 25,
+                "type": 13
+            },
+            {
+                "x": 0,
+                "y": 360,
+                "width": 150,
+                "height": 25,
+                "type": 13
+            },
+            {
+                "x": 190,
+                "y": 300,
+                "width": 620,
+                "height": 25,
+                "type": 13
+            },
+            {
+                "x": 850,
+                "y": 360,
+                "width": 150,
+                "height": 25,
+                "type": 13
+            },
+            {
+                "x": 0,
+                "y": 630,
+                "width": 1000,
+                "height": 25,
+                "type": 13
+            }
+        ],
+        "player": [
+            {
+                "stay": {
+                    "path": "PIXEL ADVENTURE\\Recursos\\Main Characters\\Ninja Frog\\Idle (32x32).png",
+                    "col": 11,
+                    "rows": 1,
+                    "flip_r": 0,
+                    "flip_l": 1
+                },
+                "walk": {
+                    "path": "PIXEL ADVENTURE\\Recursos\\Main Characters\\Ninja Frog\\Run (32x32).png",
+                    "col": 12,
+                    "rows": 1,
+                    "flip_r": 0,
+                    "flip_l": 1
+                },
+                "jump": {
+                    "path": "PIXEL ADVENTURE\\Recursos\\Main Characters\\Ninja Frog\\Jump (32x32).png",
+                    "col": 1,
+                    "rows": 1,
+                    "flip_r": 0,
+                    "flip_l": 1
+                },
+                "hit": {
+                    "path": "PIXEL ADVENTURE\\Recursos\\Main Characters\\Ninja Frog\\Hit (32x32).png",
+                    "col": 7,
+                    "rows": 7,
+                    "flip_r": 0,
+                    "flip_l": 1
+                },
+                "char": {
+                    "x": 400,
+                    "y": 600,
+                    "lives": 5,
+                    "speed_walk": 6,
+                    "gravity": 12,
+                    "jump_power": 15,
+                    "frame_rate_ms": 100,
+                    "move_rate_ms": 50,
+                    "jump_height": 60,
+                    "interval_time_jump": 300
+                }
+            }
+        ],
         "enemigos_walkers": [
             {
                 "char": {
@@ -197,9 +276,10 @@
                 "columnas": 9,
                 "filas": 1,
                 "flip": 1,
-                "gravity":10,
-                "frame_rate_ms":200,
-                "move_rate_ms":50
+                "vidas": 1,
+                "gravity": 10,
+                "frame_rate_ms": 200,
+                "move_rate_ms": 50
             },
             {
                 "x": 20,
@@ -209,9 +289,10 @@
                 "columnas": 9,
                 "filas": 1,
                 "flip": 1,
-                "gravity":10,
-                "frame_rate_ms":200,
-                "move_rate_ms":50
+                "vidas": 1,
+                "gravity": 10,
+                "frame_rate_ms": 200,
+                "move_rate_ms": 50
             },
             {
                 "x": 20,
@@ -221,9 +302,10 @@
                 "columnas": 9,
                 "filas": 1,
                 "flip": 1,
-                "gravity":10,
-                "frame_rate_ms":200,
-                "move_rate_ms":50
+                "vidas": 1,
+                "gravity": 10,
+                "frame_rate_ms": 200,
+                "move_rate_ms": 50
             },
             {
                 "x": 950,
@@ -233,9 +315,10 @@
                 "columnas": 9,
                 "filas": 1,
                 "flip": 0,
-                "gravity":10,
-                "frame_rate_ms":200,
-                "move_rate_ms":50
+                "vidas": 1,
+                "gravity": 10,
+                "frame_rate_ms": 200,
+                "move_rate_ms": 50
             },
             {
                 "x": 950,
@@ -245,9 +328,10 @@
                 "columnas": 9,
                 "filas": 1,
                 "flip": 0,
-                "gravity":10,
-                "frame_rate_ms":200,
-                "move_rate_ms":50
+                "vidas": 1,
+                "gravity": 10,
+                "frame_rate_ms": 200,
+                "move_rate_ms": 50
             },
             {
                 "x": 950,
@@ -257,31 +341,34 @@
                 "columnas": 9,
                 "filas": 1,
                 "flip": 0,
-                "gravity":10,
-                "frame_rate_ms":200,
-                "move_rate_ms":50
+                "vidas": 1,
+                "gravity": 10,
+                "frame_rate_ms": 200,
+                "move_rate_ms": 50
             }
         ],
-        "enemigo_boss": [{
-            "path_stay": "PIXEL ADVENTURE\\Enemies\\AngryPig\\Idle (36x30).png",
-            "col_stay": 9,
-            "rows_stay": 1,
-            "flip_stay_r": 1,
-            "flip_stay_l": 0,
-            "scale_stay": 5,
-            "path_hit": "PIXEL ADVENTURE\\Enemies\\AngryPig\\Hit 1 (36x30).png",
-            "col_hit": 5,
-            "rows_hit": 1,
-            "flip_hit_r": 1,
-            "flip_hit_l": 0,
-            "scale_hit": 5,
-            "x": 400,
-            "y": 0,
-            "direction": 1,
-            "gravity": 14,
-            "frame_rate_ms": 200,
-            "move_rate_ms": 50
-        }],
+        "enemigo_boss": [
+            {
+                "path_stay": "PIXEL ADVENTURE\\Enemies\\AngryPig\\Idle (36x30).png",
+                "col_stay": 9,
+                "rows_stay": 1,
+                "flip_stay_r": 1,
+                "flip_stay_l": 0,
+                "scale_stay": 5,
+                "path_hit": "PIXEL ADVENTURE\\Enemies\\AngryPig\\Hit 1 (36x30).png",
+                "col_hit": 5,
+                "rows_hit": 1,
+                "flip_hit_r": 1,
+                "flip_hit_l": 0,
+                "scale_hit": 5,
+                "x": 400,
+                "y": 0,
+                "direction": 1,
+                "gravity": 14,
+                "frame_rate_ms": 200,
+                "move_rate_ms": 50
+            }
+        ],
         "balas": [
             {
                 "path": "PIXEL ADVENTURE\\estrella.png",
@@ -499,32 +586,44 @@
                 "move_rate_ms": 50
             }
         ],
-        "proyectil":[{  
-            "path":"PIXEL ADVENTURE\\estrella.png",
-            "h":15,
-            "w":15
-        },
-        {  
-            "path":"PIXEL ADVENTURE\\estrella.png",
-            "h":15,
-            "w":15
-        },{  
-            "path":"PIXEL ADVENTURE\\estrella.png",
-            "h":15,
-            "w":15
-        },{  
-            "path":"PIXEL ADVENTURE\\estrella.png",
-            "h":15,
-            "w":15
-        },{  
-            "path":"PIXEL ADVENTURE\\estrella.png",
-            "h":15,
-            "w":15
-        },{  
-            "path":"PIXEL ADVENTURE\\estrella.png",
-            "h":15,
-            "w":15
-        }]
+        "proyectil": [
+            {
+                "path": "PIXEL ADVENTURE\\estrella.png",
+                "h": 15,
+                "w": 15,
+                "speed": 6
+            },
+            {
+                "path": "PIXEL ADVENTURE\\estrella.png",
+                "h": 15,
+                "w": 15,
+                "speed": 6
+            },
+            {
+                "path": "PIXEL ADVENTURE\\estrella.png",
+                "h": 15,
+                "w": 15,
+                "speed": 6
+            },
+            {
+                "path": "PIXEL ADVENTURE\\estrella.png",
+                "h": 15,
+                "w": 15,
+                "speed": 6
+            },
+            {
+                "path": "PIXEL ADVENTURE\\estrella.png",
+                "h": 15,
+                "w": 15,
+                "speed": 6
+            },
+            {
+                "path": "PIXEL ADVENTURE\\estrella.png",
+                "h": 15,
+                "w": 15,
+                "speed": 6
+            }
+        ]
     },
     "nivel_2": {},
     "nivel_3": {}

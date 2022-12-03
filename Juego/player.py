@@ -61,8 +61,6 @@ class Player(Gravedad):
         self.move_rate_ms = move_rate_ms
         self.y_start_jump = 0
         self.jump_height = jump_height
-
-
         self.tiempo_last_jump = 0 # en base al tiempo transcurrido general
         self.interval_time_jump = interval_time_jump
 
@@ -78,7 +76,6 @@ class Player(Gravedad):
                 else:
                     self.move_x = -self.speed_walk
                     self.animation = self.walk_l
-    
 
     def jump(self,on_off = True):
         if(on_off and self.is_jump == False and self.is_fall == False):
@@ -109,13 +106,12 @@ class Player(Gravedad):
             self.frame = 0
 
     def change_x(self, delta_x):
+        super().change_x(delta_x)
         self.bala_collition_rect.x += delta_x
-        return super().change_x(delta_x)
-
 
     def change_y(self, delta_y):
+        super().change_y(delta_y)
         self.bala_collition_rect.y += delta_y
-        return super().change_y(delta_y)
    
     def do_movement(self, delta_ms, plataform_list):
         self.tiempo_transcurrido_move += delta_ms

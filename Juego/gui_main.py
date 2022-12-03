@@ -5,7 +5,7 @@ from constantes import *
 from gui_form_selector_nivel import FormSelectorNivel
 from gui_form_nivel_1 import FormMenuNivel_1
 from gui_form_nivel_2 import FormMenuNivel_2
-from comenzar import FormComenzar
+from gui_form_play import FormComenzar
 
 
 flags = DOUBLEBUF
@@ -14,7 +14,7 @@ pygame.init()
 clock = pygame.time.Clock()
 
 
-seleccionar_nivel = FormSelectorNivel(name="nivel_1",master_surface = screen,x=0,y=0,w=1000,h=700,color_background=(255,255,255),color_border=(255,0,255),active=True)
+seleccionar_nivel = FormSelectorNivel(name="seleccionar_nivel",master_surface = screen,x=0,y=0,w=1000,h=700,color_background=(255,255,255),color_border=(255,0,255),active=True)
 nivel_1 = FormMenuNivel_1(name="nivel_1",master_surface = screen,x=0,y=0,w=1000,h=700,color_background=(255,255,255),color_border=(255,0,255),active=False)
 nivel_2 = FormMenuNivel_2(name="nivel_2",master_surface = screen,x=0,y=0,w=1000,h=700,color_background=(255,255,255),color_border=(255,0,255),active=False)
 comenzar = FormComenzar(name="comenzar",master_surface = screen,x=0,y=0,w=1000,h=700,color_background=(255,255,255),color_border=(255,0,255),active=False)
@@ -33,10 +33,9 @@ while True:
         seleccionar_nivel.update(lista_eventos)
         seleccionar_nivel.draw()
 
-    
     elif(comenzar.active):
-        comenzar.update(lista_eventos)
-        comenzar.draw()
+        comenzar.update(lista_eventos,delta_ms,keys,screen)
+        comenzar.draw(screen)
 
     elif(nivel_1.active):
         nivel_1.update(lista_eventos)

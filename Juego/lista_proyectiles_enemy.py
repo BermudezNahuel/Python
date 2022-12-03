@@ -1,23 +1,18 @@
 import pygame
 from constantes import *
-from auxiliar import Auxiliar
 
 class Cargador_enemy:
-    def __init__(self,lista) -> None:
-        self.cantidad = 5
+    def __init__(self,lista,metodo) -> None:
+        self.metodo = metodo
         self.lista = lista
         self.lista_draw = [] # En esta lista se almacenan las balas disparas
         print(len(self.lista))
         self.ubicacion_inicial = False
-        self.speed = 3
-        self.direccion_disparo = DIRECTION_R
         self.tiempo_transcurrido = 0
     
-    '''
     def crear_balas(self):
-        return [Proyectil() for i in range(self.cantidad)] #Genera una lista en una sola lista usando un for
-    '''
-
+        self.lista = self.metodo()
+    
     def obtener_bala_disparada(self,enemigos):
         for enemy in enemigos.lista_draw:
             if enemy.disparar and self.lista:
@@ -34,11 +29,11 @@ class Cargador_enemy:
     def mover_bala(self):
         for bala in self.lista_draw:
             if bala.direccion == DIRECTION_R:
-                bala.rect.x += self.speed
-                bala.collition_rect.x += self.speed
+                bala.rect.x += bala.speed
+                bala.collition_rect.x += bala.speed
             else:
-                bala.rect.x -= self.speed
-                bala.collition_rect.x -= self.speed
+                bala.rect.x -= bala.speed
+                bala.collition_rect.x -= bala.speed
 
     def update_lista_draw(self):   
         for bala in self.lista_draw:

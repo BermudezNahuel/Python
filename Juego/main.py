@@ -2,23 +2,17 @@ import pygame
 from pygame.locals import *
 import sys
 from constantes import *
-from lista_plataformas import Lista_plataformas_nivel_1
+from plataforma import Lista_plataformas
 from manager_list_walkers import Lista_walkers
 from manager_list_shooters import Lista_shooters
 from lista_proyectiles_enemy import Cargador_enemy
-from lista_proyectiles import Lista_proyectiles
-from manager_list_item_bala import Item_bala_list
+from lista_proyectiles import Cargador_player
+from manager_item_bala import Item_bala_list
 from manager_list_vida_box import Item_vida_box_list
 from status import*
 from json_manager import Json_manager
 
-'''
-import warnings
-warnings.filterwarnings('ignore')
-'''
-
-
-screen = pantalla = pygame.display.set_mode((ANCHO_VENTANA,ALTO_VENTANA))
+screen = pygame.display.set_mode((ANCHO_VENTANA,ALTO_VENTANA))
 
 pygame.init()
 
@@ -32,9 +26,11 @@ texto = fuente.render("Has Perdido",0,BLACK)
 
 
 #ESCENARIO-------------------------------------------------------
-imagen_fondo = pygame.image.load("C:\\Users\\Nahuel\\Documents\\TUP\\P y L 1\\programacion-y-laboratorio-1\\Juego\\images\\images\\locations\\set_bg_01\\mountain\\all.png").convert()
+imagen_fondo = pygame.image.load(administrador_json.imagen_fondo).convert()
 imagen_fondo = pygame.transform.scale(imagen_fondo,(ANCHO_VENTANA,ALTO_VENTANA))
-plataformas = Lista_plataformas_nivel_1()
+
+plataformas = Lista_plataformas(lista=administrador_json.plataformas)
+
 collition_r = imagen_fondo.get_rect()
 collition_r = (998,0,1,1000)
 collition_l = imagen_fondo.get_rect()
@@ -43,14 +39,13 @@ collition_l= (4,0,1,1000)
 
 #PLAYER-----------------------------------------------------------
 player_1 = administrador_json.player
-lista_proyectiles_1 = Lista_proyectiles(lista_1=administrador_json.proyectil_player,metodo=administrador_json.crear_proyectil)
-#lista_proyectiles_1 = Lista_proyectiles(administrador_json.proyectil)
+lista_proyectiles_1 = Cargador_player(lista_1=administrador_json.proyectil_player,metodo=administrador_json.crear_proyectil)
 
 
 #ENEMIGOS---------------------------------------------------------
 lista_walkers = Lista_walkers(administrador_json.walkers)
 lista_shooters = Lista_shooters(administrador_json.shooters)
-lista_balas_enemy = Cargador_enemy(lista=administrador_json.proyectil_enemy)
+lista_balas_enemy = Cargador_enemy(lista=administrador_json.proyectil_enemy,metodo=administrador_json.crear_proyectil_enemy)
 enemigo_boss = administrador_json.boss
 
 
@@ -105,13 +100,3 @@ while True:
 
     pygame.display.flip()
     
-
-
-
-    
-
-
-  
-
-
-
