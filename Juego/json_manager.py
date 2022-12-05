@@ -7,11 +7,14 @@ from manager_item_bala import Item_bala
 from manager_item_vida_box import Vida_box
 from proyectil import Proyectil
 from plataforma import Plataform
+from manager_trampas import Trampa_estatica
+from enemigo_volador import Enemy_volador
 
 class Json_manager:
     def __init__(self,path,nivel_nombre) -> None:
         self.path = path
-        self.config_nivel = self.leer_json(self.path)[nivel_nombre]
+        self.nivel = nivel_nombre
+        self.config_nivel = self.leer_json(self.path)[self.nivel]
         
         #Escenario
         self.__imagen_fondo = self.config_nivel["imagen_fondo"]["path"]
@@ -21,6 +24,11 @@ class Json_manager:
         self.__lista_plataformas = []
         self.crear_plataformas()
 
+        #Trampas
+        self.__lista_trampas_dicc = self.config_nivel["trampas"]
+        self.__lista_trampas = []
+        self.crear_trampas()
+
         #Enemigos:
         self.__lista_walkers_dicc = self.config_nivel["enemigos_walkers"]
         self.__lista_walkers = []
@@ -29,9 +37,17 @@ class Json_manager:
         self.__lista_shooters_dicc = self.config_nivel["enemigos_shooters"]
         self.__lista_shooters = []
         self.crear_shooters()
+
         self.__lista_enemigo_boss_dicc = self.config_nivel["enemigo_boss"]
         self.__lista_enemigo_boss = []
         self.crear_enemigo_boss()
+
+        if nivel_nombre == "nivel_2":
+            self.__lista_enemigo_volador_dicc = self.config_nivel["enemigos_voladores"]
+            self.__lista_enemigo_volador = []
+            self.crear_enemigo_volador()
+
+        
 
         #Player
         self.__player_dicc = self.config_nivel["player"]
@@ -74,6 +90,21 @@ class Json_manager:
             )
         self.__lista_plataformas_dicc.clear()
 
+    def crear_trampas(self):
+        for trampa in self.__lista_trampas_dicc:
+            self.__lista_trampas.append(
+                Trampa_estatica(
+                    x=trampa["x"],
+                    y=trampa["y"],
+                    path=trampa["path"],
+                    col=trampa["col"],
+                    rows=trampa["rows"],
+                    frame_rate_ms=trampa["frame_rate_ms"],
+                    move_rate_ms=trampa["move_rate_ms"]
+                )
+            )
+        self.__lista_trampas_dicc.clear()
+
     def crear_walkers(self):
         for enemigo in self.__lista_walkers_dicc:
             self.__lista_walkers.append(
@@ -95,7 +126,7 @@ class Json_manager:
                             score=enemigo["char"]["score"]
                             )
             )
-        self.__lista_walkers_dicc.clear()
+        return self.__lista_walkers
 
     def crear_shooters(self):
         for enemigo in self.__lista_shooters_dicc:
@@ -113,7 +144,7 @@ class Json_manager:
                             frame_rate_ms=enemigo["frame_rate_ms"],
                             move_rate_ms=enemigo["move_rate_ms"])
             )
-        self.__lista_shooters_dicc.clear()
+        return self.__lista_shooters
 
 
     def crear_enemigo_boss(self):
@@ -140,7 +171,28 @@ class Json_manager:
                     move_rate_ms=boss["move_rate_ms"],
                 )
             )        
-        self.__lista_enemigo_boss_dicc.clear() 
+        self.__lista_enemigo_boss_dicc.clear()
+
+    def crear_enemigo_volador(self):
+        for enemy in self.__lista_enemigo_volador_dicc:
+            self.__lista_enemigo_volador.append(
+                Enemy_volador(
+                    path_fly=enemy["path_fly"],
+                    col_fly=enemy["col_fly"],
+                    rows_fly=enemy["rows_fly"],
+                    flip_fly=enemy["flip_fly"],
+                    speed=enemy["speed"],
+                    lives=enemy["lives"],
+                    score=enemy["score"],
+                    x=enemy["x"],
+                    y=enemy["y"],
+                    direction=enemy["direction"],
+                    frame_rate_ms=enemy["frame_rate_ms"],
+                    move_rate_ms=enemy["move_rate_ms"],
+                )
+            )        
+        return self.__lista_enemigo_volador
+
 
     def crear_player(self):
         for player in self.__player_dicc:
@@ -161,6 +213,11 @@ class Json_manager:
                     rows_jump=player["jump"]["rows"], 
                     flip_r_jump=player["jump"]["flip_r"], 
                     flip_l_jump=player["jump"]["flip_l"],
+                    path_fall=player["fall"]["path"], 
+                    col_fall=player["fall"]["col"], 
+                    rows_fall=player["fall"]["rows"], 
+                    flip_r_fall=player["fall"]["flip_r"], 
+                    flip_l_fall=player["fall"]["flip_l"],
                     path_hit=player["hit"]["path"], 
                     col_hit=player["hit"]["col"], 
                     rows_hit=player["hit"]["rows"], 
@@ -237,7 +294,7 @@ class Json_manager:
                         speed=proyectil["speed"]
                 )
             )
-        #self.__lista_proyectil_dicc.clear()
+        return self.__lista_proyectil_enemy
     
 
     '''
@@ -286,3 +343,10 @@ class Json_manager:
     def plataformas(self):
         return self.__lista_plataformas
 
+    @property
+    def trampas(self):
+        return self.__lista_trampas
+
+    @property
+    def voladores(self):
+        return self.__lista_enemigo_volador

@@ -57,8 +57,9 @@ lista_item_vida_box = Item_vida_box_list(administrador_json.vida_box)
 barra_vida = Barra_vida()
 
 
+running = True
 
-while True:     
+while running:     
 
     lista_eventos = pygame.event.get()
     for event in lista_eventos:

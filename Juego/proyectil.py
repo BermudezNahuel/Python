@@ -11,7 +11,7 @@ class Proyectil:
         #self.mostrar_bala = True
         self.rect.h = int(self.rect.h/3)
         self.speed = speed
-        self.collition_rect = pygame.Rect(self.rect.x,self.rect.y+self.rect.h,10,10)
+        self.collition_rect = pygame.Rect(self.rect.x,self.rect.y+self.rect.h-3,8,8)
         self.eliminada = False
         self.direccion = DIRECTION_R
 

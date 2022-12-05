@@ -6,9 +6,9 @@ import random
 
 
 class Lista_walkers:
-    def __init__(self,lista_enemigos) -> None:
-        
-        self.lista_general = lista_enemigos# En esta lista se encuentran los enemigos no nacidos
+    def __init__(self,lista,metodo) -> None:
+        self.metodo = metodo
+        self.lista_general = lista
         self.lista_draw = [] # En esta lista se almacenan los enemigos spawneados
         self.tiempo_spawn = 5000
         self.tiempo_transcurrido = 0
@@ -45,7 +45,11 @@ class Lista_walkers:
             if enemigo.eliminado:
                 self.lista_draw.remove(enemigo)
 
-    def update(self,bala,delta_ms,plataform_list,screen,player,border_r,borde_l,jefe):
+    def recargar(self):
+        if not self.lista_general:#pregunto si la lista esta vacia
+            self.lista_general = self.metodo()
+
+    def update(self,bala,delta_ms,plataform_list,player,border_r,borde_l,jefe):
         '''
         if self.bandera_primero:
             self.crear_enemigo_dos()
@@ -53,9 +57,12 @@ class Lista_walkers:
         '''
         self.enemigo_spawn(delta_ms)
         self.encontrar_colision()
-        #self.recargar_enemigos(jefe)
+        self.recargar()
         for enemigo in self.lista_draw:
             enemigo.update(delta_ms,plataform_list,bala,player,border_r,borde_l)
+            
+    def draw(self,screen):
+        for enemigo in self.lista_draw:
             enemigo.draw(screen)
 
 

@@ -39,18 +39,18 @@ class Enemigo_master(Gravedad):
                     if self.vidas < 1:
                         self.eliminado = True
                         player.aumentar_puntos = True
-        '''
-        def colision_head(self,player):
-            #Comprueba si existe una colision del rectangulo de la cabeza del enemigo con el rectangulo de los pies del player.Si existe la colision se modifica la propiedad "eliminado" del enemigo a True
-            if pygame.Rect.colliderect(player.ground_collition_rect,self.head_collition_rect):
-                self.eliminado = True
-                player.aumentar_puntos = True
-        '''
+        
+    def colision_head(self,player):
+        #Comprueba si existe una colision del rectangulo de la cabeza del enemigo con el rectangulo de los pies del player.Si existe la colision se modifica la propiedad "eliminado" del enemigo a True
+        if pygame.Rect.colliderect(player.ground_collition_rect,self.head_collition_rect):
+            self.eliminado = True
+            player.aumentar_puntos = True
+        
     
     def herir_player(self,player,delta_ms):
         if self.collition_rect.colliderect(player.collition_rect):
             self.tiempo_transcurrido += delta_ms
-            if self.tiempo_transcurrido >50:
+            if self.tiempo_transcurrido >100:
                 self.tiempo_transcurrido = 0
                 player.injured = True
     

@@ -6,7 +6,6 @@ class Cargador_enemy:
         self.metodo = metodo
         self.lista = lista
         self.lista_draw = [] # En esta lista se almacenan las balas disparas
-        print(len(self.lista))
         self.ubicacion_inicial = False
         self.tiempo_transcurrido = 0
     
@@ -40,15 +39,15 @@ class Cargador_enemy:
                 if (bala.rect.x > ANCHO_VENTANA or bala.rect.x < 0 or bala.eliminada):
                     self.lista_draw.remove(bala)#se elimina la bala
 
-    '''
+    
     def recargar(self):
         if not self.lista:#pregunto si la lista esta vacia
-            self.lista = 
-    '''
+            self.lista = self.metodo()
+    
 
 
     def update(self,enemigos,delta_ms):
-        #self.recargar(lista_recarga)
+        self.recargar()
         self.obtener_bala_disparada(enemigos)
         self.mover_bala()
         self.update_lista_draw()

@@ -68,9 +68,13 @@ class Item_bala_list:
                 self.lista_draw.remove(item)
                 objeto_item.recargar()
 
-    def update(self,delta_ms,screen,player,objeto_item,plataform_list):
+    def update(self,delta_ms,player,objeto_item,plataform_list):
         self.item_spawn(delta_ms)
         self.encontrar_colision(objeto_item)
         for item in self.lista_draw:
             item.update(player,plataform_list,delta_ms)
+
+    
+    def draw(self,screen):
+        for item in self.lista_draw:
             item.draw(screen)

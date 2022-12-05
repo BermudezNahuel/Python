@@ -40,7 +40,7 @@ class Gravedad:
 
     def is_on_plataform(self,plataform_list):
         retorno = False
-        if(self.ground_collition_rect.bottom >= GROUND_LEVEL):
+        if(self.ground_collition_rect == GROUND_LEVEL):
             retorno = True     
         else:
             for plataforma in  plataform_list.lista_general:

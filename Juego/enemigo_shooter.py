@@ -83,7 +83,7 @@ class Enemigo_shooter(Enemigo_master):
         self.do_movement(delta_ms,plataform_list)
         self.do_animation(delta_ms)
         self.colision_bala(bala,delta_ms,player)
-        #self.colision_head(player)
+        self.colision_head(player)
         self.comenzar_disparos(player,delta_ms)
         self.definir_rect()
     
