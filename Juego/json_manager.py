@@ -5,7 +5,7 @@ from enemigo_boss import Enemigo_boss
 from player import Player
 from manager_item_bala import Item_bala
 from manager_item_vida_box import Vida_box
-from proyectil import Proyectil
+from manager_proyectil import Proyectil
 from plataforma import Plataform
 from manager_trampas import Trampa_estatica
 from enemigo_volador import Enemy_volador

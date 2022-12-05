@@ -9,12 +9,11 @@ from gui_button import Button
 from plataforma import Lista_plataformas
 from manager_list_walkers import Lista_walkers
 from manager_list_shooters import Lista_shooters
-from lista_proyectiles_enemy import Cargador_enemy
-from lista_proyectiles import Cargador_player
+from manager_proyectil import *
 from manager_item_bala import Item_bala_list
-from manager_list_vida_box import Item_vida_box_list
+from manager_item_vida_box import Item_vida_box_list
 from manager_trampas import Lista_trampas
-from status import*
+from status import *
 from json_manager import Json_manager
 
 
