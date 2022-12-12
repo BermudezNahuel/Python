@@ -5,6 +5,9 @@ from auxiliar import Auxiliar
 
 
 class Plataform:
+    '''
+    Esta clase se encarga de crear las plataformas del juego
+    '''
     def __init__(self,x,y,width,height,type=1):
 
         self.image_list= Auxiliar.getSurfaceFromSeparateFiles("images/images/tileset/forest/Tiles/{0}.png",18,flip=False,w=width,h=height)
@@ -18,12 +21,14 @@ class Plataform:
         self.ground_collition_rect = pygame.Rect(self.rect)
         self.ground_collition_rect.height = GROUND_COLLIDE_H-3
 
-    
+    '''
+    Originalmente este metodo eliminaba las balas que chocaban con las plataformas
     def colisionar_balas(self,bala):
         tamaño_lista = len(bala.lista_draw)
         for i in range(tamaño_lista):
             if self.collition_rect.colliderect(bala.lista_draw[i].collition_rect):
                     bala.lista_draw[i].eliminada = True
+    '''
 
     def escalar_imagen(self):
         for cubo in self.image_list:
@@ -39,6 +44,10 @@ class Plataform:
         self.colisionar_balas(bala)
 
 class Lista_plataformas:
+    '''
+    Esta clase toma como paramentro una lista de plataformas y las dibuja en la pantalla
+    '''
+
     def __init__(self,lista) -> None:
         self.lista_general = lista
 

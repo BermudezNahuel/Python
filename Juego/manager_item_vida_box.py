@@ -66,9 +66,16 @@ class Item_vida_box_list:
             if item.eliminado:
                 self.lista_draw.remove(item)
 
-    def update(self,delta_ms,screen,player,platafor_list):
+    def update(self,delta_ms,player,platafor_list):
+        '''
+        Actualiza los metodos propios de la clase
+        '''
         self.item_spawn(delta_ms)
         self.encontrar_colision()
         for item in self.lista_draw:
             item.update(player,platafor_list,delta_ms)
+
+
+    def draw(self,screen):
+        for item in self.lista_draw:
             item.draw(screen)

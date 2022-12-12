@@ -1,25 +1,39 @@
+import warnings
+warnings.filterwarnings("ignore") 
 import pygame
 from pygame.locals import *
 import sys
 from constantes import *
 from gui_form_selector_nivel import FormSelectorNivel
-from gui_form_play_1 import FormPlay_1
-from gui_form_play_2 import FormPlay_2
-from gui_form_play_3 import FormPlay_3
+from gui_form_play import FormPlay
+from gui_menu import *
+from gui_form_play import *
+from gui_form_inicio import FormInicio
+from gui_form_lose import FormLose
+from gui_form_win import FormWin
+from gui_form_ingreso import FormIngreso
+from gui_form_score import FormScore
 
 
 flags = DOUBLEBUF
 screen = pygame.display.set_mode((ANCHO_VENTANA,ALTO_VENTANA))
 pygame.init()
 clock = pygame.time.Clock()
-pygame.mixer.init()
-pygame.mixer.music.set_volume(0.5)
 
 
-seleccionar_nivel = FormSelectorNivel(name="seleccionar_nivel",master_surface = screen,x=0,y=0,w=1000,h=700,color_background=(255,255,255),color_border=(255,0,255),active=True)
-play_1 = FormPlay_1(name="play_1",master_surface = screen,x=0,y=0,w=1000,h=700,color_background=(255,255,255),color_border=(255,0,255),active=False,level="nivel_1")
-play_2 = FormPlay_2(name="play_2",master_surface = screen,x=0,y=0,w=1000,h=700,color_background=(255,255,255),color_border=(255,0,255),active=False,level="nivel_2")
-play_3 = FormPlay_3(name="play_3",master_surface = screen,x=0,y=0,w=1000,h=700,color_background=(255,255,255),color_border=(255,0,255),active=False,level="nivel_3")
+
+
+pantalla_ingreso = FormIngreso(name="pantalla_ingreso",master_surface = screen,x=0,y=0,w=ANCHO_VENTANA//1.5,h=ALTO_VENTANA//1.3,color_background=(255,255,255),color_border=(255,0,255),active=True)
+pantalla_inicio = FormInicio(name="pantalla_inicio",master_surface = screen,x=0,y=0,w=ANCHO_VENTANA//1.5,h=ALTO_VENTANA//1.3,color_background=(255,255,255),color_border=(255,0,255),active=False)
+pantalla_scores = FormScore(name="pantalla_scores",master_surface = screen,x=0,y=0,w=ANCHO_VENTANA//1.5,h=ALTO_VENTANA//1.3,color_background=(255,255,255),color_border=(255,0,255),active=False)
+seleccionar_nivel = FormSelectorNivel(name="seleccionar_nivel",master_surface = screen,x=250,y=100,w=500,h=500,color_background=(255,255,255),color_border=(255,0,255),active=False)
+master = FormPlay(name="master",master_surface = screen,x=0,y=0,w=ALTO_VENTANA,h=ANCHO_VENTANA,color_background=(255,255,255),color_border=(255,0,255),active=False)
+menu = FormMenu(name="menu",master_surface = screen,x=ANCHO_VENTANA//3,y=ALTO_VENTANA//3,w=ANCHO_VENTANA//2,h=ANCHO_VENTANA//1.5,color_background=WHITE,color_border=WHITE,active=False)
+menu_inicio = FormMenuInicio(name="menu_inicio",master_surface = screen,x=ANCHO_VENTANA//3,y=ALTO_VENTANA//3,w=ANCHO_VENTANA//2,h=ANCHO_VENTANA//2,color_background=WHITE,color_border=WHITE,active=False)
+you_lose = FormLose(name="you_lose",master_surface = screen,x=ANCHO_VENTANA//3,y=ALTO_VENTANA//3,w=ANCHO_VENTANA//2,h=ANCHO_VENTANA//1.5,color_background=WHITE,color_border=WHITE,active=False)
+you_win = FormWin(name="you_win",master_surface = screen,x=ANCHO_VENTANA//3,y=ALTO_VENTANA//3,w=ANCHO_VENTANA//2,h=ANCHO_VENTANA//1.5,color_background=WHITE,color_border=WHITE,active=False)
+
+
 
 running = True
 
@@ -35,22 +49,50 @@ while running:
     keys = pygame.key.get_pressed()
     delta_ms = clock.tick(FPS)
 
-    if(seleccionar_nivel.active):
+    if(pantalla_ingreso.active):
+        pantalla_ingreso.update(lista_eventos)
+        pantalla_ingreso.draw()
+
+    elif(pantalla_inicio.active):
+        pantalla_inicio.update(lista_eventos)
+        pantalla_inicio.draw()
+        pantalla_scores.reinicio = True
+
+    elif(pantalla_scores.active):
+        pantalla_scores.update(lista_eventos)
+        pantalla_scores.draw()
+
+    
+    elif(seleccionar_nivel.active):
         seleccionar_nivel.update(lista_eventos)
         seleccionar_nivel.draw()
+        master.reinicio = True
         
-    elif(play_1.active):
-        play_1.update(lista_eventos,delta_ms,keys)
-        play_1.draw()
         
-    elif(play_2.active):
-        play_2.update(lista_eventos,delta_ms,keys)
-        play_2.draw()
-        
-    elif(play_3.active):
-        play_3.update(lista_eventos,delta_ms,keys)
-        play_3.draw()
-        
+    elif(master.active):
+        master.update(lista_eventos,delta_ms,keys)
+        master.draw()
+
+
+    elif(menu.active):
+        menu.update(lista_eventos)
+        menu.draw()
+
+    elif(menu_inicio.active):
+        menu_inicio.update(lista_eventos)
+        menu_inicio.draw()
+    
+    
+    elif(you_lose.active):
+        you_lose.update(lista_eventos)
+        you_lose.draw()
+        master.reinicio = True
+
+    elif(you_win.active):
+        you_win.update(lista_eventos)
+        you_win.draw()
+        master.reinicio = True
+    
         
     pygame.display.flip()
 

@@ -5,8 +5,9 @@ from master_gravedad import*
 
 
 class Enemigo_master(Gravedad):
-    def __init__(self,gravity=14, frame_rate_ms=100, move_rate_ms=50) -> None:
+    def __init__(self,gravity,score, frame_rate_ms, move_rate_ms) -> None:
         super().__init__(gravity, frame_rate_ms, move_rate_ms)
+        self.score = score
 
     def change_x(self, delta_x):
         self.head_collition_rect.x += delta_x 
@@ -37,8 +38,9 @@ class Enemigo_master(Gravedad):
                     self.vidas -= 1
                     bala.lista_draw[i].eliminada = True
                     if self.vidas < 1:
-                        self.eliminado = True
+                        player.puntos = self.score
                         player.aumentar_puntos = True
+                        self.eliminado = True
         
     def colision_head(self,player):
         #Comprueba si existe una colision del rectangulo de la cabeza del enemigo con el rectangulo de los pies del player.Si existe la colision se modifica la propiedad "eliminado" del enemigo a True

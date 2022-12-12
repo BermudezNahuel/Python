@@ -78,7 +78,7 @@
         "trampas": [
             {
                 "x": 400,
-                "y": 610,
+                "y": 615,
                 "path": "PIXEL ADVENTURE\\Recursos\\Saw\\On (38x38).png",
                 "col": 8,
                 "rows": 1,
@@ -87,7 +87,7 @@
             },
             {
                 "x": 600,
-                "y": 610,
+                "y": 615,
                 "path": "PIXEL ADVENTURE\\Recursos\\Saw\\On (38x38).png",
                 "col": 8,
                 "rows": 1,
@@ -96,7 +96,7 @@
             },
             {
                 "x": 400,
-                "y": 475,
+                "y": 480,
                 "path": "PIXEL ADVENTURE\\Recursos\\Saw\\On (38x38).png",
                 "col": 8,
                 "rows": 1,
@@ -105,7 +105,7 @@
             },
             {
                 "x": 600,
-                "y": 475,
+                "y": 480,
                 "path": "PIXEL ADVENTURE\\Recursos\\Saw\\On (38x38).png",
                 "col": 8,
                 "rows": 1,
@@ -169,7 +169,7 @@
                     "flip_l": 1
                 },
                 "char": {
-                    "x": 400,
+                    "x": 250,
                     "y": 600,
                     "lives": 5,
                     "speed_walk": 7,
@@ -191,8 +191,8 @@
                     "speed": 8,
                     "frame_rate_ms": 200,
                     "move_rate_ms": 50,
-                    "lives": 4,
-                    "score": 100
+                    "lives": 3,
+                    "score": 200
                 },
                 "stay": {
                     "path": "PIXEL ADVENTURE\\Enemies\\AngryPig\\Idle (36x30).png",
@@ -215,8 +215,8 @@
                     "speed": 8,
                     "frame_rate_ms": 200,
                     "move_rate_ms": 50,
-                    "lives": 4,
-                    "score": 100
+                    "lives": 3,
+                    "score": 200
                 },
                 "stay": {
                     "path": "PIXEL ADVENTURE\\Enemies\\AngryPig\\Idle (36x30).png",
@@ -239,8 +239,8 @@
                     "speed": 8,
                     "frame_rate_ms": 200,
                     "move_rate_ms": 50,
-                    "lives": 4,
-                    "score": 100
+                    "lives": 3,
+                    "score": 200
                 },
                 "stay": {
                     "path": "PIXEL ADVENTURE\\Enemies\\AngryPig\\Idle (36x30).png",
@@ -263,8 +263,8 @@
                     "speed": 8,
                     "frame_rate_ms": 200,
                     "move_rate_ms": 50,
-                    "lives": 4,
-                    "score": 100
+                    "lives": 3,
+                    "score": 200
                 },
                 "stay": {
                     "path": "PIXEL ADVENTURE\\Enemies\\AngryPig\\Idle (36x30).png",
@@ -287,8 +287,8 @@
                     "speed": 8,
                     "frame_rate_ms": 200,
                     "move_rate_ms": 50,
-                    "lives": 4,
-                    "score": 100
+                    "lives": 3,
+                    "score": 200
                 },
                 "stay": {
                     "path": "PIXEL ADVENTURE\\Enemies\\AngryPig\\Idle (36x30).png",
@@ -311,8 +311,8 @@
                     "speed": 8,
                     "frame_rate_ms": 200,
                     "move_rate_ms": 50,
-                    "lives": 4,
-                    "score": 100
+                    "lives": 3,
+                    "score": 200
                 },
                 "stay": {
                     "path": "PIXEL ADVENTURE\\Enemies\\AngryPig\\Idle (36x30).png",
@@ -340,7 +340,8 @@
                 "vidas": 1,
                 "gravity": 10,
                 "frame_rate_ms": 200,
-                "move_rate_ms": 50
+                "move_rate_ms": 50,
+                "score": 300
             },
             {
                 "x": 20,
@@ -353,7 +354,8 @@
                 "vidas": 1,
                 "gravity": 10,
                 "frame_rate_ms": 200,
-                "move_rate_ms": 50
+                "move_rate_ms": 50,
+                "score": 300
             },
             {
                 "x": 20,
@@ -366,46 +368,8 @@
                 "vidas": 1,
                 "gravity": 10,
                 "frame_rate_ms": 200,
-                "move_rate_ms": 50
-            },
-            {
-                "x": 950,
-                "y": 175,
-                "direction": 0,
-                "path": "PIXEL ADVENTURE\\Enemies\\AngryPig\\Idle (36x30).png",
-                "columnas": 9,
-                "filas": 1,
-                "flip": 0,
-                "vidas": 1,
-                "gravity": 10,
-                "frame_rate_ms": 200,
-                "move_rate_ms": 50
-            },
-            {
-                "x": 950,
-                "y": 400,
-                "direction": 0,
-                "path": "PIXEL ADVENTURE\\Enemies\\AngryPig\\Idle (36x30).png",
-                "columnas": 9,
-                "filas": 1,
-                "flip": 0,
-                "vidas": 1,
-                "gravity": 10,
-                "frame_rate_ms": 200,
-                "move_rate_ms": 50
-            },
-            {
-                "x": 950,
-                "y": 475,
-                "direction": 0,
-                "path": "PIXEL ADVENTURE\\Enemies\\AngryPig\\Idle (36x30).png",
-                "columnas": 9,
-                "filas": 1,
-                "flip": 0,
-                "vidas": 1,
-                "gravity": 10,
-                "frame_rate_ms": 200,
-                "move_rate_ms": 50
+                "move_rate_ms": 50,
+                "score": 300
             }
         ],
         "enemigo_boss": [
@@ -427,7 +391,9 @@
                 "direction": 1,
                 "gravity": 14,
                 "frame_rate_ms": 200,
-                "move_rate_ms": 50
+                "move_rate_ms": 50,
+                "score": 2000,
+                "lives":10
             }
         ],
         "balas": [
@@ -877,12 +843,14 @@
                 "flip_fly": 1,
                 "speed": 9,
                 "lives": 2,
-                "score": 200,
+                "score": 400,
                 "x": 5,
                 "y": 20,
                 "direction":1,
                 "move_rate_ms": 50,
                 "frame_rate_ms": 150
+                
+                
             },
             {
                 "path_fly": "PIXEL ADVENTURE\\Enemies\\BlueBird\\Flying (32x32).png",
@@ -891,12 +859,14 @@
                 "flip_fly": 1,
                 "speed": 9,
                 "lives": 2,
-                "score": 200,
+                "score": 400,
                 "x": 5,
                 "y": 20,
                 "direction":0,
                 "move_rate_ms": 50,
                 "frame_rate_ms": 150
+                
+                
             },
             {
                 "path_fly": "PIXEL ADVENTURE\\Enemies\\BlueBird\\Flying (32x32).png",
@@ -905,12 +875,14 @@
                 "flip_fly": 1,
                 "speed": 9,
                 "lives": 2,
-                "score": 200,
+                "score": 400,
                 "x": 5,
                 "y": 20,
                 "direction":1,
                 "move_rate_ms": 50,
                 "frame_rate_ms": 150
+                
+                
             },
             {
                 "path_fly": "PIXEL ADVENTURE\\Enemies\\BlueBird\\Flying (32x32).png",
@@ -919,12 +891,13 @@
                 "flip_fly": 1,
                 "speed": 9,
                 "lives": 2,
-                "score": 200,
+                "score": 400,
                 "x": 5,
                 "y": 20,
                 "direction":0,
                 "move_rate_ms": 50,
                 "frame_rate_ms": 150
+                
             }
         ],
         "enemigos_walkers": [
@@ -1085,7 +1058,8 @@
                 "vidas": 1,
                 "gravity": 10,
                 "frame_rate_ms": 200,
-                "move_rate_ms": 50
+                "move_rate_ms": 50,
+                "score": 150
             },
             {
                 "x": 100,
@@ -1098,7 +1072,8 @@
                 "vidas": 1,
                 "gravity": 10,
                 "frame_rate_ms": 200,
-                "move_rate_ms": 50
+                "move_rate_ms": 50,
+                "score": 150
             },
             {
                 "x": 100,
@@ -1111,7 +1086,8 @@
                 "vidas": 1,
                 "gravity": 10,
                 "frame_rate_ms": 200,
-                "move_rate_ms": 50
+                "move_rate_ms": 50,
+                "score": 150
             },
             {
                 "x": 900,
@@ -1124,7 +1100,8 @@
                 "vidas": 1,
                 "gravity": 10,
                 "frame_rate_ms": 200,
-                "move_rate_ms": 50
+                "move_rate_ms": 50,
+                "score": 150
             },
             {
                 "x": 900,
@@ -1137,7 +1114,8 @@
                 "vidas": 1,
                 "gravity": 10,
                 "frame_rate_ms": 200,
-                "move_rate_ms": 50
+                "move_rate_ms": 50,
+                "score": 150
             },
             {
                 "x": 900,
@@ -1150,7 +1128,8 @@
                 "vidas": 1,
                 "gravity": 10,
                 "frame_rate_ms": 200,
-                "move_rate_ms": 50
+                "move_rate_ms": 50,
+                "score": 150
             }
         ],
         "enemigo_boss": [
@@ -1172,7 +1151,9 @@
                 "direction": 1,
                 "gravity": 14,
                 "frame_rate_ms": 200,
-                "move_rate_ms": 50
+                "move_rate_ms": 50,
+                "score": 2000,
+                "lives":10
             }
         ],
         "balas": [
@@ -1433,7 +1414,7 @@
     },
     "nivel_3": {
         "imagen_fondo": {
-            "path": "images\\images\\locations\\set_bg_02\\Mar\\Background.png"
+            "path": "images\\images\\locations\\set_bg_01\\city\\all.png"
         },
         "plataformas": [
             {
@@ -1509,8 +1490,8 @@
         ],
         "trampas": [
             {
-                "x": 500,
-                "y": 610,
+                "x": 400,
+                "y": 615,
                 "path": "PIXEL ADVENTURE\\Recursos\\Saw\\On (38x38).png",
                 "col": 8,
                 "rows": 1,
@@ -1518,8 +1499,44 @@
                 "move_rate_ms": 50
             },
             {
-                "x": 800,
-                "y": 200,
+                "x": 600,
+                "y": 615,
+                "path": "PIXEL ADVENTURE\\Recursos\\Saw\\On (38x38).png",
+                "col": 8,
+                "rows": 1,
+                "frame_rate_ms": 150,
+                "move_rate_ms": 50
+            },
+            {
+                "x": 400,
+                "y": 480,
+                "path": "PIXEL ADVENTURE\\Recursos\\Saw\\On (38x38).png",
+                "col": 8,
+                "rows": 1,
+                "frame_rate_ms": 150,
+                "move_rate_ms": 50
+            },
+            {
+                "x": 600,
+                "y": 480,
+                "path": "PIXEL ADVENTURE\\Recursos\\Saw\\On (38x38).png",
+                "col": 8,
+                "rows": 1,
+                "frame_rate_ms": 150,
+                "move_rate_ms": 50
+            },
+            {
+                "x": 400,
+                "y": 380,
+                "path": "PIXEL ADVENTURE\\Recursos\\Saw\\On (38x38).png",
+                "col": 8,
+                "rows": 1,
+                "frame_rate_ms": 150,
+                "move_rate_ms": 50
+            },
+            {
+                "x": 600,
+                "y": 380,
                 "path": "PIXEL ADVENTURE\\Recursos\\Saw\\On (38x38).png",
                 "col": 8,
                 "rows": 1,
@@ -1565,15 +1582,15 @@
                     "flip_l": 1
                 },
                 "char": {
-                    "x": 400,
+                    "x": 250,
                     "y": 600,
                     "lives": 5,
-                    "speed_walk": 6,
+                    "speed_walk": 7,
                     "gravity": 12,
                     "jump_power": 15,
                     "frame_rate_ms": 200,
                     "move_rate_ms": 50,
-                    "jump_height": 60,
+                    "jump_height": 70,
                     "interval_time_jump": 300
                 }
             }
@@ -1587,8 +1604,8 @@
                     "speed": 8,
                     "frame_rate_ms": 200,
                     "move_rate_ms": 50,
-                    "lives": 4,
-                    "score": 100
+                    "lives": 5,
+                    "score": 200
                 },
                 "stay": {
                     "path": "PIXEL ADVENTURE\\Enemies\\AngryPig\\Idle (36x30).png",
@@ -1611,8 +1628,8 @@
                     "speed": 8,
                     "frame_rate_ms": 200,
                     "move_rate_ms": 50,
-                    "lives": 4,
-                    "score": 100
+                    "lives": 5,
+                    "score": 200
                 },
                 "stay": {
                     "path": "PIXEL ADVENTURE\\Enemies\\AngryPig\\Idle (36x30).png",
@@ -1635,8 +1652,8 @@
                     "speed": 8,
                     "frame_rate_ms": 200,
                     "move_rate_ms": 50,
-                    "lives": 4,
-                    "score": 100
+                    "lives": 5,
+                    "score": 200
                 },
                 "stay": {
                     "path": "PIXEL ADVENTURE\\Enemies\\AngryPig\\Idle (36x30).png",
@@ -1659,56 +1676,8 @@
                     "speed": 8,
                     "frame_rate_ms": 200,
                     "move_rate_ms": 50,
-                    "lives": 4,
-                    "score": 100
-                },
-                "stay": {
-                    "path": "PIXEL ADVENTURE\\Enemies\\AngryPig\\Idle (36x30).png",
-                    "col": 9,
-                    "rows": 1,
-                    "flip": 1
-                },
-                "walk": {
-                    "path": "PIXEL ADVENTURE\\Enemies\\AngryPig\\Walk (36x30).png",
-                    "col": 16,
-                    "rows": 1,
-                    "flip": 1
-                }
-            },
-            {
-                "char": {
-                    "x": 500,
-                    "y": 170,
-                    "gravity": 10,
-                    "speed": 8,
-                    "frame_rate_ms": 200,
-                    "move_rate_ms": 50,
-                    "lives": 4,
-                    "score": 100
-                },
-                "stay": {
-                    "path": "PIXEL ADVENTURE\\Enemies\\AngryPig\\Idle (36x30).png",
-                    "col": 9,
-                    "rows": 1,
-                    "flip": 1
-                },
-                "walk": {
-                    "path": "PIXEL ADVENTURE\\Enemies\\AngryPig\\Walk (36x30).png",
-                    "col": 16,
-                    "rows": 1,
-                    "flip": 1
-                }
-            },
-            {
-                "char": {
-                    "x": 500,
-                    "y": 170,
-                    "gravity": 10,
-                    "speed": 8,
-                    "frame_rate_ms": 200,
-                    "move_rate_ms": 50,
-                    "lives": 4,
-                    "score": 100
+                    "lives": 5,
+                    "score": 200
                 },
                 "stay": {
                     "path": "PIXEL ADVENTURE\\Enemies\\AngryPig\\Idle (36x30).png",
@@ -1729,79 +1698,43 @@
                 "x": 20,
                 "y": 175,
                 "direction": 1,
-                "path": "PIXEL ADVENTURE\\Enemies\\AngryPig\\Idle (36x30).png",
-                "columnas": 9,
+                "path": "PIXEL ADVENTURE\\Enemies\\Plant\\Attack (44x42).png",
+                "columnas": 8,
                 "filas": 1,
                 "flip": 1,
-                "vidas": 1,
+                "vidas": 3,
                 "gravity": 10,
                 "frame_rate_ms": 200,
-                "move_rate_ms": 50
+                "move_rate_ms": 50,
+                "score": 300
             },
             {
                 "x": 20,
                 "y": 400,
                 "direction": 1,
-                "path": "PIXEL ADVENTURE\\Enemies\\AngryPig\\Idle (36x30).png",
-                "columnas": 9,
+                "path": "PIXEL ADVENTURE\\Enemies\\Plant\\Attack (44x42).png",
+                "columnas": 8,
                 "filas": 1,
                 "flip": 1,
                 "vidas": 1,
                 "gravity": 10,
                 "frame_rate_ms": 200,
-                "move_rate_ms": 50
+                "move_rate_ms": 50,
+                "score": 300
             },
             {
                 "x": 20,
                 "y": 475,
                 "direction": 1,
-                "path": "PIXEL ADVENTURE\\Enemies\\AngryPig\\Idle (36x30).png",
-                "columnas": 9,
+                "path": "PIXEL ADVENTURE\\Enemies\\Plant\\Attack (44x42).png",
+                "columnas": 8,
                 "filas": 1,
                 "flip": 1,
-                "vidas": 1,
+                "vidas": 3,
                 "gravity": 10,
                 "frame_rate_ms": 200,
-                "move_rate_ms": 50
-            },
-            {
-                "x": 950,
-                "y": 175,
-                "direction": 0,
-                "path": "PIXEL ADVENTURE\\Enemies\\AngryPig\\Idle (36x30).png",
-                "columnas": 9,
-                "filas": 1,
-                "flip": 0,
-                "vidas": 1,
-                "gravity": 10,
-                "frame_rate_ms": 200,
-                "move_rate_ms": 50
-            },
-            {
-                "x": 950,
-                "y": 400,
-                "direction": 0,
-                "path": "PIXEL ADVENTURE\\Enemies\\AngryPig\\Idle (36x30).png",
-                "columnas": 9,
-                "filas": 1,
-                "flip": 0,
-                "vidas": 1,
-                "gravity": 10,
-                "frame_rate_ms": 200,
-                "move_rate_ms": 50
-            },
-            {
-                "x": 950,
-                "y": 475,
-                "direction": 0,
-                "path": "PIXEL ADVENTURE\\Enemies\\AngryPig\\Idle (36x30).png",
-                "columnas": 9,
-                "filas": 1,
-                "flip": 0,
-                "vidas": 1,
-                "gravity": 10,
-                "frame_rate_ms": 200,
-                "move_rate_ms": 50
+                "move_rate_ms": 50,
+                "score": 300
             }
         ],
         "enemigo_boss": [
@@ -1823,7 +1756,9 @@
                 "direction": 1,
                 "gravity": 14,
                 "frame_rate_ms": 200,
-                "move_rate_ms": 50
+                "move_rate_ms": 50,
+                "score": 2000,
+                "lives":20
             }
         ],
         "balas": [

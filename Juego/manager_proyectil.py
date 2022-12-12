@@ -26,13 +26,14 @@ class Cargador_player:
         self.lista_draw = [] # En esta lista se almacenan las balas disparas
         self.disparo_on_off = False
         self.tiempo_transcurrido = 0
-
+        self.cantidad_balas = 0
         self.sonido_disparo = pygame.mixer.Sound("PIXEL ADVENTURE\laser5.ogg")
     
     def cargar_lista_general(self):
         self.lista_general = self.metodo()
  
     def disparar(self,player):
+        self.cantidad_balas = len(self.lista_general)
         if self.disparo_on_off and self.lista_general:
             #Dentro de este condicional se actualizan la ubicacion y la direccion de la bala,hasta que esta se dispara
             bala_disparada = self.lista_general.pop(0)# Se elimina el objeto que se encuentra en el indice 0, y se lo asigna a la variable bala_disparada
@@ -53,7 +54,10 @@ class Cargador_player:
                 bala.rect.x -= bala.speed
                 bala.collition_rect.x -= bala.speed
 
-    def update_lista_draw(self):   
+    def update_lista_draw(self):
+        '''
+        Actualiza la lista de proyectiles, eliminando de la lista aquellas que ya colisionaron con un enemigo o que salieron de la pantalla
+        '''   
         for bala in self.lista_draw:
                 if (bala.rect.x > ANCHO_VENTANA or bala.rect.x < 0 or bala.eliminada):
                     self.lista_draw.remove(bala)#se elimina la bala
@@ -61,7 +65,7 @@ class Cargador_player:
     def recargar(self):
         self.cargar_lista_general()
 
-    def event(self,lista_eventos,delta_ms):
+    def event(self,lista_eventos):
         for evento in lista_eventos:
             if evento.type == pygame.KEYDOWN:
                 if evento.key == pygame.K_s and self.lista_general:
@@ -71,10 +75,12 @@ class Cargador_player:
                     self.recargar()
                     
 
-    def update(self,player):
+    def update(self,player,lista_eventos):
+        self.event(lista_eventos)
         self.disparar(player)
         self.mover_bala()
         self.update_lista_draw()
+
 
 
     def draw(self,screen):
@@ -121,6 +127,9 @@ class Cargador_enemy:
                 bala.collition_rect.x -= bala.speed
 
     def update_lista_draw(self):   
+        '''
+        Actualiza la lista de proyectiles, eliminando de la lista aquellas que ya colisionaron con el player o que salieron de la pantalla
+        ''' 
         for bala in self.lista_draw:
                 if (bala.rect.x > ANCHO_VENTANA or bala.rect.x < 0 or bala.eliminada):
                     self.lista_draw.remove(bala)#se elimina la bala

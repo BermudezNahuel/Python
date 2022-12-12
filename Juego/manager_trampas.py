@@ -5,6 +5,9 @@ from constantes import *
 
 
 class Trampa_estatica:
+    '''
+    Esta clase crea las trampas
+    '''
     def __init__(self,x,y,path,col,rows,frame_rate_ms=150,move_rate_ms=50) -> None:
 
         self.stay = Auxiliar.getSurfaceFromSpriteSheet(path,col,rows)
@@ -25,6 +28,9 @@ class Trampa_estatica:
 
 
     def do_animation(self,delta_ms):
+        '''
+        Este metodo maneja los sprites de movimiento del personaje, de acuerdo, a los paramtros que se cargan en los metodos
+        '''
         self.tiempo_transcurrido_animation += delta_ms
         if(self.tiempo_transcurrido_animation >= self.frame_rate_ms):
             self.tiempo_transcurrido_animation = 0

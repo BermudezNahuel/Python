@@ -1,9 +1,14 @@
+import warnings
+warnings.filterwarnings("ignore") 
 import pygame
 from constantes import *
 from auxiliar import Auxiliar
 from master_gravedad import*
 
 class Player(Gravedad):
+    '''
+    Esta clase crea al player, con sus respectivos parametros que se tomaran de una clase que administra el json
+    '''
     def __init__(self, 
                     path_walk,col_walk,rows_walk,flip_r_walk,flip_l_walk,
                     path_stay,col_stay,rows_stay,flip_r_stay,flip_l_stay,
@@ -27,6 +32,7 @@ class Player(Gravedad):
         self.frame = 0
         self.lives = lives
         self.score = 0
+        self.puntos = 0
         self.texto_perdio = ""
         self.texto_cronometro= ""
         self.cronometro = 100
@@ -44,6 +50,8 @@ class Player(Gravedad):
         self.rect = self.image.get_rect()
         self.rect.x = x
         self.rect.y = y
+
+        
 
         self.collition_rect = pygame.Rect(x+self.rect.width/3,y,self.rect.width/3,self.rect.height-5)
         self.ground_collition_rect = pygame.Rect(self.collition_rect)
@@ -76,6 +84,9 @@ class Player(Gravedad):
 
 
     def walk(self,direction):
+        '''
+        Este metodo se encarga de la funcion de caminar, cargando una velocidad de desplazamiento y una direccion determinada por el movimiento de los controles
+        '''
         if(self.is_jump == False and self.is_fall == False):
             if(self.direction != direction or (self.animation != self.walk_r and self.animation != self.walk_l)):
                 self.frame = 0
@@ -88,6 +99,10 @@ class Player(Gravedad):
                     self.animation = self.walk_l
 
     def jump(self,on_off = True):
+        '''
+        Este metodo se encarga de realizar el movimiento de salto, para el cual tiene en cuenta determiandos parametros,
+        por ejemplo que el personaje no este saltando o este cayendo.
+        '''
         if(on_off and self.is_jump == False and self.is_fall == False):
             self.y_start_jump = self.rect.y
             if(self.direction == DIRECTION_R):
@@ -107,7 +122,9 @@ class Player(Gravedad):
             self.stay()
 
     def stay(self):
-        #if(self.animation != self.stay_r and self.animation != self.stay_l and self.invencibilidad == False):
+        '''
+        Este metodo se encarga de cargar los sprites del peronaje cuando no se esta desplazando
+        '''
         if(self.animation != self.stay_r and self.animation != self.stay_l):
             if(self.direction == DIRECTION_R):
                 self.animation = self.stay_r
@@ -126,6 +143,9 @@ class Player(Gravedad):
         self.bala_collition_rect.y += delta_y
    
     def do_movement(self, delta_ms, plataform_list):
+        '''
+        En esta funcion es donde se llevan a cabo finalmente los desplazamientos del personaje
+        '''
         self.tiempo_transcurrido_move += delta_ms
         if(self.tiempo_transcurrido_move >= self.move_rate_ms):
             self.tiempo_transcurrido_move = 0
@@ -150,7 +170,10 @@ class Player(Gravedad):
                     self.jump(False)
                 self.is_fall = False
         
-    def colision_bala(self,bala_enemigo):#Comprueba si existe una colision del enemigo con alguna de las balas. Si existe la colision se modifica la propiedad "eliminada" de bala y "eliminado" del enemigo a True
+    def colision_bala(self,bala_enemigo):
+        '''
+        Comprueba si existe una colision del enemigo con alguna de las balas. Si existe la colision se modifica la propiedad "eliminada" de bala y "eliminado" del enemigo a True
+        '''
         tamaño_lista = len(bala_enemigo.lista_draw)
         for i in range(tamaño_lista):
                 if self.bala_collition_rect.colliderect(bala_enemigo.lista_draw[i].collition_rect):
@@ -158,16 +181,11 @@ class Player(Gravedad):
                     bala_enemigo.lista_draw[i].eliminada = True
     
 
-    def modo_invencible(self,delta_ms):
-        if self.injured:
-            self.invencibilidad = True
-            self.tiempo_transcurrido += delta_ms
-            if self.tiempo_transcurrido > 2000:
-                self.tiempo_transcurrido = 0
-                self.invencibilidad = False
-
     def damage(self):
-        if self.injured and not self.invencibilidad:
+        '''
+        Se encargar de modificar la vida del player al recibir daño, y de moverlo determiandos pixeles a la derecha o izquierda al colisionar con un enemigo
+        '''
+        if self.injured:
             if self.lives > 0:
                 self.lives -= 1
             self.injured = False
@@ -177,23 +195,30 @@ class Player(Gravedad):
                 self.change_x(+70)
 
     def recargar_vida(self):
+        '''
+        Se recarga la vida del player cuando colisiona con un item de vida
+        '''
         if self.aumentar_vida:
             self.lives += self.carga_de_vida
             if self.lives > 5:
                 self.lives = 5
             self.aumentar_vida = False
     
-    def manejar_score(self,lista_enemigos):
-        for enemy in lista_enemigos.lista_draw:
-            if self.aumentar_puntos:
-                self.score += enemy.score
-                self.aumentar_puntos = False
-
+    def manejar_score(self):
+        '''
+        Al eliminar un enemigo este metodo se encargar de sumar una determinada cantidad de puntos al score del player
+        '''
+        if self.aumentar_puntos:
+            self.score += self.puntos
+            self.aumentar_puntos = False
 
     def mostrar_score(self,fuente_dos):
         self.texto_score = fuente_dos.render("Score: {0}".format(self.score),0,BLACK)
 
     def mostrar_cronometro(self,fuente_dos,delta_ms,boss):
+        '''
+        Se encarga de manejar el tiempo del juego, tanto de disminuirlo, como renderizarlo el tiempo
+        '''
         if not boss.eliminado:
             self.tiempo_cronometro += delta_ms
             if self.tiempo_cronometro >= 1000:
@@ -201,19 +226,24 @@ class Player(Gravedad):
                 self.tiempo_cronometro = 0
             self.texto_cronometro = fuente_dos.render("Tiempo: {0}".format(self.cronometro),0,BLACK)
 
-    def update(self,delta_ms,plataform_list,bala_enemigo,lista_enemigos,fuente_dos,boss):
+    def update(self,delta_ms,plataform_list,bala_enemigo,fuente_dos,boss):
+        '''
+        Actualiza los metodos propios de la clase
+        '''
         self.damage()
-        self.modo_invencible(delta_ms)
         self.recargar_vida()
         self.colision_bala(bala_enemigo)
-        self.manejar_score(lista_enemigos)
+        self.manejar_score()
         self.mostrar_score(fuente_dos)
         self.mostrar_cronometro(fuente_dos,delta_ms,boss)
         self.do_movement(delta_ms,plataform_list)
         self.do_animation(delta_ms)
-        #self.game_over(fuente_dos)
+ 
     
     def draw(self,screen):
+        '''
+        Dibuja en la pantalla los sprites generados
+        '''
         
         if(DEBUG):
             pygame.draw.rect(screen,color=(255,0 ,0),rect=self.collition_rect)
@@ -222,11 +252,15 @@ class Player(Gravedad):
 
         self.image = self.animation[self.frame]
         screen.blit(self.image,self.rect)
-        screen.blit(self.texto_score,(850,50))
-        screen.blit(self.texto_cronometro,(700,50))
+        screen.blit(self.texto_score,(20,60))
+        screen.blit(self.texto_cronometro,(20,100))
 
 
     def events(self,delta_ms,keys):
+        '''
+        Registra los eventos qeu suceden durante el transcurso del juego, como las teclas presionadas que dan movimiento al player
+        '''
+
         self.tiempo_transcurrido += delta_ms
 
         if(keys[pygame.K_LEFT] and not keys[pygame.K_RIGHT]):

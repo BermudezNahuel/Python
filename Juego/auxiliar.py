@@ -1,8 +1,14 @@
 import pygame
 
 class Auxiliar:
+    '''
+    Esta clase posee dos metodos que permiten obtener sprites de una solo archivo png o de varios archivos que se encuentren dentro de una misma carpeta
+    '''
     @staticmethod
     def getSurfaceFromSpriteSheet(path,columnas,filas,flip=False, step = 1,scale=1):
+        '''
+        Este metodo divide un archivo png en varios y devuelve una lista con los sprites.Se le debe pasar como parametro  las cantidad de columnas y filas que posee el spritesheet
+        '''
         lista = []
         surface_imagen = pygame.image.load(path)
         fotograma_ancho = int(surface_imagen.get_width()/columnas)
@@ -25,6 +31,9 @@ class Auxiliar:
 
     @staticmethod
     def getSurfaceFromSeparateFiles(path_format,quantity,flip=False,step = 1,scale=1,w=0,h=0,repeat_frame=1):
+        '''
+        Este metodo varios archivos png y crea una lista de sprites con estos. Se le debe pasar como parametro las cantidad de columnas y filas que posee el spritesheet
+        '''
         lista = []
         for i in range(1,quantity+1):
             path = path_format.format(i)

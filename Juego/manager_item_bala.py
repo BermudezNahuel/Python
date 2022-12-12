@@ -31,6 +31,9 @@ class Item_bala(Gravedad):
             self.eliminado = True
 
     def update(self,player,plataform_list,delta_ms):
+        '''
+        Actualiza los metodos propios de la clase
+        '''
         self.colision(player)
         self.do_animation(delta_ms)
         self.is_on_plataform(plataform_list)

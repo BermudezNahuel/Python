@@ -1,16 +1,21 @@
+import warnings
+warnings.filterwarnings("ignore") 
 import json
-from enemigo_walking import Enemigo_walker
-from enemigo_shooter import Enemigo_shooter
-from enemigo_boss import Enemigo_boss
+from manager_walkers import Enemigo_walker
+from manager_shooters import Enemigo_shooter
+from manager_boss import Enemigo_boss
 from player import Player
 from manager_item_bala import Item_bala
 from manager_item_vida_box import Vida_box
 from manager_proyectil import Proyectil
 from plataforma import Plataform
 from manager_trampas import Trampa_estatica
-from enemigo_volador import Enemy_volador
+from manager_voladores import Enemy_volador
 
 class Json_manager:
+    '''
+    Esta clase se encarga de manejar el json, tiene como parametro principal, ladireccion de json y el nivel con el que se va a trabajar
+    '''
     def __init__(self,path,nivel_nombre) -> None:
         self.path = path
         self.nivel = nivel_nombre
@@ -142,7 +147,8 @@ class Json_manager:
                             vidas=enemigo["vidas"],
                             gravity=enemigo["gravity"],
                             frame_rate_ms=enemigo["frame_rate_ms"],
-                            move_rate_ms=enemigo["move_rate_ms"])
+                            move_rate_ms=enemigo["move_rate_ms"],
+                            score=enemigo["score"])
             )
         return self.__lista_shooters
 
@@ -169,6 +175,8 @@ class Json_manager:
                     gravity=boss["gravity"],
                     frame_rate_ms=boss["frame_rate_ms"],
                     move_rate_ms=boss["move_rate_ms"],
+                    score = boss["score"],
+                    lives=boss["lives"]
                 )
             )        
         self.__lista_enemigo_boss_dicc.clear()
@@ -188,7 +196,7 @@ class Json_manager:
                     y=enemy["y"],
                     direction=enemy["direction"],
                     frame_rate_ms=enemy["frame_rate_ms"],
-                    move_rate_ms=enemy["move_rate_ms"],
+                    move_rate_ms=enemy["move_rate_ms"]
                 )
             )        
         return self.__lista_enemigo_volador

@@ -14,7 +14,7 @@ class Form():
         self.h = h
         self.color_background = color_background
         self.color_border = color_border
-        
+        self.level = ""
 
         self.surface = pygame.Surface((w,h))
         self.slave_rect = self.surface.get_rect()
@@ -42,27 +42,45 @@ class Form():
         self.master_surface.blit(self.surface,self.slave_rect)
 
 
-class FormMenu(Form):
-    def __init__(self,master_surface,x,y,w,h,color_background,color_border,active):
-        super().__init__(master_surface,x,y,w,h,color_background,color_border,active)
+class FormularioMenu(Form):
+    def __init__(self,name,master_surface,x,y,w,h,color_background,color_border,active):
+        self.forms_dict[name] = self
+        self.master_surface = master_surface
+        self.x = x
+        self.y = y
+        self.w = w
+        self.h = h
+        self.color_background = color_background
+        self.color_border = color_border
+        self.level = ""
 
-        self.boton1 = Button(master=self,x=100,y=50,w=200,h=50,color_background=(255,0,0),color_border=(255,0,255),on_click=self.on_click_boton1,on_click_param="1234",text="MENU",font="Verdana",font_size=30,font_color=(0,255,0))
-        self.boton2 = Button(master=self,x=200,y=50,w=200,h=50,color_background=(255,0,0),color_border=(255,0,255),on_click=self.on_click_boton1,on_click_param="8",text="MENU 2",font="Verdana",font_size=30,font_color=(0,255,0))
-        self.lista_widget = [self.boton1,self.boton2]
+        self.surface = pygame.Surface((w,h))
+        self.slave_rect = self.surface.get_rect()
+        self.slave_rect.x = x
+        self.slave_rect.y = y
+        self.active = active
+        self.x = x
+        self.y = y
+        
+        if(self.color_background != None):
+            self.surface.fill(self.color_background)
+        
+    
+    def set_active(self,name):
+        for aux_form in self.forms_dict.values():
+            aux_form.active = False
+        self.forms_dict[name].active = True
 
-    def on_click_boton1(self, parametro):
-        print("CLICK",parametro)
+    def render(self):
+        pass
 
-    def update(self, lista_eventos):
-        for aux_boton in self.lista_widget:
-            aux_boton.update(lista_eventos)
+    def update(self,lista_eventos):
+        pass
 
-    def draw(self): 
-        super().draw()
-        for aux_boton in self.lista_widget:    
-            aux_boton.draw()
+    def draw(self):
+        self.master_surface.blit(self.surface,self.slave_rect)
 
-class FormLevel(FormMenu):
+class FormLevel(FormularioMenu):
     def __init__(self,master_surface,x,y,w,h,color_background,color_border,active,level):
         super().__init__(master_surface,x,y,w,h,color_background,color_border,active,level)
         
@@ -76,6 +94,9 @@ class FormLevel(FormMenu):
         print("CLICK",parametro)
 
     def update(self, lista_eventos):
+        '''
+        Actualiza los metodos propios de la clase
+        '''
         for aux_boton in self.lista_widget:
             aux_boton.update(lista_eventos)
 
