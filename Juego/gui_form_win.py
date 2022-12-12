@@ -13,8 +13,8 @@ class FormWin(FormularioMenu):
         super().__init__(name, master_surface, x, y, w, h, color_background, color_border, active)
 
         self.boton1 = Button(master=self,x=ANCHO_VENTANA//10,y=10,w=ANCHO_VENTANA//5,h=ALTO_VENTANA//10,color_background=None,color_border=None,image_background="images\\botones\\jungle\\you_win\\header.png",on_click=None,on_click_param=False,text=None,font="Verdana",font_size=30,font_color=WHITE)
-        self.boton2 = Button_v2(master=self,x=350,y=250,w=250,h=50,color_background=None,color_border=None,image_background="images\\botones\\jungle\\level_select\\table.png",on_click=self.on_click_boton1,on_click_param="pantalla_inicio",text="Volver Inicio",font="Fixedsys",font_size=30,font_color=BLACK)
-        self.boton3 = Button_v2(master=self,x=350,y=450,w=250,h=50,color_background=None,color_border=None,image_background="images\\botones\\jungle\\level_select\\table.png",on_click=self.on_click_boton1,on_click_param="master",text="Volver a Jugar",font="Fixedsys",font_size=30,font_color=BLACK)
+        self.boton2 = Button_v2(master=self,x=400,y=250,w=250,h=50,color_background=None,color_border=None,image_background="images\\botones\\jungle\\level_select\\table.png",on_click=self.on_click_boton1,on_click_param="pantalla_inicio",text="Volver Inicio",font="Fixedsys",font_size=30,font_color=BLACK)
+        self.boton3 = Button_v2(master=self,x=400,y=450,w=250,h=50,color_background=None,color_border=None,image_background="images\\botones\\jungle\\level_select\\table.png",on_click=self.on_click_boton1,on_click_param="master",text="Volver a Jugar",font="Fixedsys",font_size=30,font_color=BLACK)
        
         self.lista_widget = [self.boton1,self.boton2,self.boton3]
 

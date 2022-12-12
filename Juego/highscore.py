@@ -54,11 +54,15 @@ class High_score:
         Actualiza los metodos propios de la clase
         '''
         self.consultar_scores()
-        
+
+'''
+
 data = High_score()
 
-id = "4"
+id = "17"
 
 data.eliminar(id)
+
+'''
 
 

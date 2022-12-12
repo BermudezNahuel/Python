@@ -5,6 +5,9 @@ from auxiliar import Auxiliar
 from master_gravedad import Gravedad
 
 class Item_bala(Gravedad):
+    '''
+    Esta clase crea el iten bala, que sirve como recarga de proyectiles para el player
+    '''
     def __init__(self,path,col,rows,scale,x,y,gravity,frame_rate_ms,move_rate_ms) -> None:
         super().__init__(gravity, frame_rate_ms, move_rate_ms)
         self.scale=scale
@@ -20,13 +23,16 @@ class Item_bala(Gravedad):
         self.ground_collition_rect = pygame.Rect(self.collition_rect)
         self.ground_collition_rect.y += 10
         self.ground_collition_rect.height = GROUND_COLLIDE_H
-        #self.ground_collition_rect.y = y + self.rect.height - GROUND_COLLIDE_H
+        
         
         self.eliminado = False
         self.gravity = 14
         self.move_y = 0
     
     def colision(self,player):
+        '''
+        Este metodo encontra si existe una colision del item con el player
+        '''
         if self.collition_rect.colliderect(player.collition_rect):
             self.eliminado = True
 
@@ -49,10 +55,13 @@ class Item_bala(Gravedad):
 
 
 class Item_bala_list:
+    '''
+    Esta clase maneja la lista de items de proyectiles
+    '''
     def __init__(self,lista) -> None:
         self.lista_general = lista# En esta lista se encuentran los enemigos no spawneados
         self.lista_draw = [] # En esta lista se almacenan los items spawneados
-        self.tiempo_spawn = 15000
+        self.tiempo_spawn = 5000
         self.tiempo_transcurrido = 0
 
 

@@ -23,6 +23,9 @@ clock = pygame.time.Clock()
 
 
 
+
+
+
 pantalla_ingreso = FormIngreso(name="pantalla_ingreso",master_surface = screen,x=0,y=0,w=ANCHO_VENTANA//1.5,h=ALTO_VENTANA//1.3,color_background=(255,255,255),color_border=(255,0,255),active=True)
 pantalla_inicio = FormInicio(name="pantalla_inicio",master_surface = screen,x=0,y=0,w=ANCHO_VENTANA//1.5,h=ALTO_VENTANA//1.3,color_background=(255,255,255),color_border=(255,0,255),active=False)
 pantalla_scores = FormScore(name="pantalla_scores",master_surface = screen,x=0,y=0,w=ANCHO_VENTANA//1.5,h=ALTO_VENTANA//1.3,color_background=(255,255,255),color_border=(255,0,255),active=False)

@@ -649,6 +649,36 @@
                 "h": 15,
                 "w": 15,
                 "speed": 6
+            },
+            {
+                "path": "PIXEL ADVENTURE\\estrella.png",
+                "h": 15,
+                "w": 15,
+                "speed": 6
+            },
+            {
+                "path": "PIXEL ADVENTURE\\estrella.png",
+                "h": 15,
+                "w": 15,
+                "speed": 6
+            },
+            {
+                "path": "PIXEL ADVENTURE\\estrella.png",
+                "h": 15,
+                "w": 15,
+                "speed": 6
+            },
+            {
+                "path": "PIXEL ADVENTURE\\estrella.png",
+                "h": 15,
+                "w": 15,
+                "speed": 6
+            },
+            {
+                "path": "PIXEL ADVENTURE\\estrella.png",
+                "h": 15,
+                "w": 15,
+                "speed": 6
             }
         ]
     },
@@ -1409,6 +1439,54 @@
                 "h": 15,
                 "w": 15,
                 "speed": 6
+            },
+            {
+                "path": "PIXEL ADVENTURE\\estrella.png",
+                "h": 15,
+                "w": 15,
+                "speed": 6
+            },
+            {
+                "path": "PIXEL ADVENTURE\\estrella.png",
+                "h": 15,
+                "w": 15,
+                "speed": 6
+            },
+            {
+                "path": "PIXEL ADVENTURE\\estrella.png",
+                "h": 15,
+                "w": 15,
+                "speed": 6
+            },
+            {
+                "path": "PIXEL ADVENTURE\\estrella.png",
+                "h": 15,
+                "w": 15,
+                "speed": 6
+            },
+            {
+                "path": "PIXEL ADVENTURE\\estrella.png",
+                "h": 15,
+                "w": 15,
+                "speed": 6
+            },
+            {
+                "path": "PIXEL ADVENTURE\\estrella.png",
+                "h": 15,
+                "w": 15,
+                "speed": 6
+            },
+            {
+                "path": "PIXEL ADVENTURE\\estrella.png",
+                "h": 15,
+                "w": 15,
+                "speed": 6
+            },
+            {
+                "path": "PIXEL ADVENTURE\\estrella.png",
+                "h": 15,
+                "w": 15,
+                "speed": 6
             }
         ]
     },
@@ -1979,6 +2057,48 @@
             }
         ],
         "proyectil": [
+            {
+                "path": "PIXEL ADVENTURE\\estrella.png",
+                "h": 15,
+                "w": 15,
+                "speed": 6
+            },
+            {
+                "path": "PIXEL ADVENTURE\\estrella.png",
+                "h": 15,
+                "w": 15,
+                "speed": 6
+            },
+            {
+                "path": "PIXEL ADVENTURE\\estrella.png",
+                "h": 15,
+                "w": 15,
+                "speed": 6
+            },
+            {
+                "path": "PIXEL ADVENTURE\\estrella.png",
+                "h": 15,
+                "w": 15,
+                "speed": 6
+            },
+            {
+                "path": "PIXEL ADVENTURE\\estrella.png",
+                "h": 15,
+                "w": 15,
+                "speed": 6
+            },
+            {
+                "path": "PIXEL ADVENTURE\\estrella.png",
+                "h": 15,
+                "w": 15,
+                "speed": 6
+            },
+            {
+                "path": "PIXEL ADVENTURE\\estrella.png",
+                "h": 15,
+                "w": 15,
+                "speed": 6
+            },
             {
                 "path": "PIXEL ADVENTURE\\estrella.png",
                 "h": 15,
