@@ -13,6 +13,8 @@ El juego consta de 3 niveles, en cada nivel existe un enemigo_jefe, se gana el n
 
 
 -El juego presenta varios formularios:
+
+
 En el primero se debe ingresar un nombre para poder jugar, el mismo se utilizara para guardar los puntos que realice el player
 
 ![bloggif_6399e1ca1f906](https://user-images.githubusercontent.com/108639518/207627409-94308664-82df-4a46-8c9b-db0d4e30b44f.gif)
