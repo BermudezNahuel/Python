@@ -10,6 +10,8 @@ El juego consta de 3 niveles, en cada nivel existe un enemigo_jefe, se gana el n
 
 
 -Un video corto en el cual se muestre el funcionamiento
+
+
 -El juego presenta varios formularios:
 En el primero se debe ingresar un nombre para poder jugar, el mismo se utilizara para guardar los puntos que realice el player
 
