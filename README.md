@@ -13,7 +13,7 @@ El proyecto se basa en un juego realizado con el lenguaje de Python, utilizando 
 
 
 
-### Ninja Frog:tw-1f438:
+### Ninja Frog:frog:
 
 Este es un juego de plataformas, donde el objetivo principal es eliminar al jefe de cada nivel. El jugados pierde cuando se termina el tiempo o cuando el personaje principal se queda sin vidas.
 
@@ -50,27 +50,27 @@ En la pantalla de nivel, en la esquina izquierda superior se encuentra la vida y
 ------------
 
 
-## Bugs conocidos y posibles correcciones de errores:tw-1f47e: :tw-1f47e:
+## Bugs conocidos y posibles correcciones de errores:space_invader:
 
 Por lo mencionado al principio, el juego aún se encuentra en desarrollo, por lo tanto, se puede considerar que esta es una **versión 1.0**. Teniendo en cuenta lo anterior son muchos los aspectos a mejorar:
 
 
-###### Jugabilidad:
+###### Jugabilidad::joystick:
 -Mejorar las colisiones de los proyectiles.
 -Mejorar las colisiones de los personajes con las plataformas.
 -Agregar más movimientos al personaje principal, como el poder quedar colgado del borde de las plataformas, etc. 
 
 
-###### Apartado gráfico: :tw-1f3a5: :tw-1f3ac:
+###### Apartado gráfico: :movie_camera:
 -Mejorar animaciones en los movimientos de los personajes.
 -Animar los fondos de pantalla.
 -Buscar mejores barras para representar el score, proyectiles y timer.
 
-###### Música y efectos de sonido: :tw-1f3a7: :tw-1f3b6:
+###### Música y efectos de sonido: :speaker: :musical_note:
 -Poder cambiar música de cada nivel.
 -Agregar efectos de sonido a los movimientos de los personajes(saltos, contacto con proyectiles, muerte del jefe enemigo).
 
-###### Personalización del entorno::tw-1f3ae:
+###### Personalización del entorno::video_game:
 -Agregar más opciones en los menús, como poder subir y bajar el volumen de la música/ efectos de sonido.
 -Permitir la personalización de los controles del juego.
 
@@ -83,7 +83,7 @@ Lo mencionado en este apartado no agota las posibles mejoras del juego. Ya que n
 
 
 
-## Los requisitos del entorno de desarrollo.:tw-1f4bb: :tw-1f527:
+## Los requisitos del entorno de desarrollo. 	:computer: :hammer_and_wrench:
 
 -Un editor de código como Visual Studio Code.
 -Agregar Python a Visual Studio Code.
@@ -97,11 +97,11 @@ En el siguiente enlace se puede encontrar un tutorial de cómo realizar lo neces
 ------------
 
 
-###Guía para la instalación y el funcionamiento.:tw-1f4aa: :tw-1f44a:
+###Guía para la instalación y el funcionamiento.:ok_hand: :facepunch:
 
 Para la instalación y funcionamiento del juego solamente se debe descargar el proyecto, descomprimirlo e ir al archivo main, que se encuentra en la carpeta principal y hacerlo correr.
 
-#### Canales de comunicacion:tw-1f4e8: :tw-1f4de:
+#### Canales de comunicacion::envelope:
 
 Correo: bermudez93@gmail.com
 Discord : Bermudez Nahuel#6817
