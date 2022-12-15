@@ -122,8 +122,13 @@ class FormPlay(Form):
             self.highscore.agregar(self.data)
             self.set_active("you_win")
 
-        if not self.music_on_off:
+
+        if self.music_on_off:
+            pygame.mixer.music.set_volume(0.1)
+            #pygame.mixer.music.play()
+        elif self.music_on_off == False:
             pygame.mixer.music.set_volume(0.0)
+            #pygame.mixer.music.stop()
 
         self.trampas.update(player=self.player,delta_ms=delta_ms)
 

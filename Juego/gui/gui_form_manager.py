@@ -27,7 +27,7 @@ class FormManager:
         self.play = FormPlay(name="master",master_surface = screen,x=0,y=0,w=ALTO_VENTANA,h=ANCHO_VENTANA,color_background=(255,255,255),color_border=(255,0,255),active=False)
         self.menu = FormMenu(name="menu",master_surface = screen,x=ANCHO_VENTANA//3,y=ALTO_VENTANA//3,w=ANCHO_VENTANA//2,h=ANCHO_VENTANA//1.5,color_background=WHITE,color_border=WHITE,active=False)
         self.menu_inicio = FormMenuInicio(name="menu_inicio",master_surface = screen,x=ANCHO_VENTANA//3,y=ALTO_VENTANA//3,w=ANCHO_VENTANA//2,h=ANCHO_VENTANA//2,color_background=WHITE,color_border=WHITE,active=False)
-        self.you_lose = FormLose(name="you_lose",master_surface = screen,x=ANCHO_VENTANA//4,y=ALTO_VENTANA//20,w=ANCHO_VENTANA//1.2,h=ALTO_VENTANA//1.5,color_background=WHITE,color_border=WHITE,active=False)
+        self.you_lose = FormLose(name="you_lose",master_surface = screen,x=300,y=200,w=ANCHO_VENTANA//1.2,h=ALTO_VENTANA//1.5,color_background=WHITE,color_border=WHITE,active=False)
         self.you_win = FormWin(name="you_win",master_surface = screen,x=ANCHO_VENTANA//3,y=ALTO_VENTANA//3,w=ANCHO_VENTANA//2,h=ANCHO_VENTANA//1.5,color_background=WHITE,color_border=WHITE,active=False)
 
 
