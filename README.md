@@ -1,11 +1,11 @@
-#Ninja Frog
+# Ninja Frog
 
 
 
 README
 
 
-El proyecto se basa en un juego realizado con el lenguaje de Python, utilizando el módulo Pygame. Al ser el mismo, un trabajo final para la catedra de una carrera de programación, se busca poner en práctica los conocimientos adquiridos durante la cursada. Actualmente el nombre del juego es Ninja Frog.
+El proyecto se basa en un juego realizado con el lenguaje de Python, utilizando el módulo Pygame. Al ser el mismo, un trabajo final para la catedra de una carrera de programación, se busca poner en práctica los conocimientos adquiridos durante la cursada. Actualmente el nombre del juego es Ninja Frog,pero podria modificarse a futuro.
 
 
 ------------
