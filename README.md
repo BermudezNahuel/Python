@@ -1,20 +1,11 @@
 # Programacion y laboratorio 1
+
 README
- 
-
-3. Esenciales de un readme
- 
-Es un proyecto de la catedra programacion I,en cual, como trabajo final de debia realizar un juego con el lenguaje python, y una libreria llamada PYGAME 
-El juego consta de 3 niveles, en cada nivel existe un enemigo_jefe, se gana el nivel cuando el player elimina al enemigo_jefe 
-
-El proyecto se basa en un juego relizado con el lenguaje de Python, utilizando el modulo Pygame. Al ser el mismo, un trabajo final para la catedra de una carrera de programacion, se busca poner en practica los conocimientos adquiridos en la misma 
 
 
--Un video corto en el cual se muestre el funcionamiento
+El proyecto se basa en un juego relizado con el lenguaje de Python, utilizando el modulo Pygame. Al ser el mismo, un trabajo final para la catedra de una carrera de programacion, se busca poner en practica los conocimientos adquiridos durante la cursada.
 
-
--El juego presenta varios formularios:
-
+`#0d1117`
 
 En la primer pantalla se debe ingresar un nombre para poder jugar, el mismo se utilizara para guardar los puntos que realice el player
 
