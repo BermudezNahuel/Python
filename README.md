@@ -104,6 +104,7 @@ Para la instalación y funcionamiento del juego solamente se debe descargar el p
 #### Canales de comunicacion::envelope:
 
 Correo: bermudez93@gmail.com
+
 Discord : Bermudez Nahuel#6817
 
 LinkedIn: [www.linkedin.com/in/nahuelbermudez](www.linkedin.com/in/nahuelbermudez "www.linkedin.com/in/nahuelbermudez")
