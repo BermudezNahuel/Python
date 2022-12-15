@@ -1,6 +1,4 @@
-# programacion-y-laboratorio-1
-# Programación y laboratorio 1
-
+Ninja Frog
 README
 
 
