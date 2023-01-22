@@ -13,15 +13,20 @@ from gui.gui_form_play import *
 from gui.gui_form_inicio import FormInicio
 from gui.gui_form_lose import FormLose
 from gui.gui_form_win import FormWin
-from gui.gui_form_ingreso import FormIngreso
+from gui.gui_form_ingreso_lose import FormIngresoLose
+from gui.gui_form_ingreso_win import FormIngresoWin
 from gui.gui_form_score import FormScore
 
 
 
 class FormManager:
+    '''
+    Esta clase se encarga de manipular los formularios del juego
+    '''
     def __init__(self,screen) -> None:
-        self.pantalla_ingreso = FormIngreso(name="pantalla_ingreso",master_surface = screen,x=0,y=0,w=ANCHO_VENTANA//1.5,h=ALTO_VENTANA//1.3,color_background=(255,255,255),color_border=(255,0,255),active=True)
-        self.pantalla_inicio = FormInicio(name="pantalla_inicio",master_surface = screen,x=0,y=0,w=ANCHO_VENTANA//1.5,h=ALTO_VENTANA//1.3,color_background=(255,255,255),color_border=(255,0,255),active=False)
+        self.pantalla_ingreso_lose = FormIngresoLose(name="pantalla_ingreso_lose",master_surface = screen,x=0,y=0,w=ANCHO_VENTANA//1.5,h=ALTO_VENTANA//1.3,color_background=(255,255,255),color_border=(255,0,255),active=False)
+        self.pantalla_ingreso_win = FormIngresoWin(name="pantalla_ingreso_win",master_surface = screen,x=0,y=0,w=ANCHO_VENTANA//1.5,h=ALTO_VENTANA//1.3,color_background=(255,255,255),color_border=(255,0,255),active=False)
+        self.pantalla_inicio = FormInicio(name="pantalla_inicio",master_surface = screen,x=0,y=0,w=ANCHO_VENTANA//1.5,h=ALTO_VENTANA//1.3,color_background=(255,255,255),color_border=(255,0,255),active=True)
         self.pantalla_scores = FormScore(name="pantalla_scores",master_surface = screen,x=0,y=0,w=ANCHO_VENTANA//1.5,h=ALTO_VENTANA//1.3,color_background=(255,255,255),color_border=(255,0,255),active=False)
         self.seleccionar_nivel = FormSelectorNivel(name="seleccionar_nivel",master_surface = screen,x=250,y=100,w=500,h=500,color_background=(255,255,255),color_border=(255,0,255),active=False)
         self.play = FormPlay(name="master",master_surface = screen,x=0,y=0,w=ALTO_VENTANA,h=ANCHO_VENTANA,color_background=(255,255,255),color_border=(255,0,255),active=False)
@@ -32,10 +37,14 @@ class FormManager:
 
 
     def Gestionar_formularios(self,lista_eventos,delta_ms,keys):
+        '''
+        Este metodo se encagra de dibujar y updatear el formulario que se encuentra activo
+        '''
 
-        if(self.pantalla_ingreso.active):
-            self.pantalla_ingreso.update(lista_eventos)
-            self.pantalla_ingreso.draw()
+        if(self.pantalla_ingreso_lose.active):
+            self.pantalla_ingreso_lose.update(lista_eventos)
+            self.pantalla_ingreso_lose.draw()
+          
 
         elif(self.pantalla_inicio.active):
             self.pantalla_inicio.update(lista_eventos)

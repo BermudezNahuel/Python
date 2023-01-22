@@ -89,6 +89,6 @@ class FormMenuInicio(FormularioMenu):
         super().draw()
         for aux_boton in self.lista_widget:    
             aux_boton.draw()
-        #self.master_surface.blit(self.imagen_pausa,(100,0))
+        
     
     

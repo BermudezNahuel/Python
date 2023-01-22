@@ -106,3 +106,19 @@ class Barra_proyectiles:
     
     def draw(self,screen):
         screen.blit(self.texto_proyectiles,(20,50))
+
+class Win:
+    def __init__(self) -> None:
+        self.fuente = pygame.font.SysFont("Verdana",80)
+        self.texto = self.fuente.render("YOU WIN",0,BLACK)
+    
+    def draw(self,screen):
+        screen.blit(self.texto,(300,300))
+
+class Lose:
+    def __init__(self) -> None:
+        self.fuente = pygame.font.SysFont("Verdana",80)
+        self.texto = self.fuente.render("GAME OVER",0,BLACK)
+    
+    def draw(self,screen):
+        screen.blit(self.texto,(500,500))

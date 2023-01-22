@@ -34,6 +34,8 @@ class FormPlay(Form):
         self.music_on_off = True
         self.highscore = High_score()
         self.data_nombre = "player"
+        self.data = ()
+        self.data_score = ""
         
         self.salir = Button(master=self,x=850,y=10,w=50,h=50,color_background=None,color_border=None,on_click=self.on_click_boton1,on_click_param="pantalla_inicio",image_background="images\\botones\\jungle\\btn\\close.png",text=None,font="Verdana",font_size=30,font_color=(0,255,0))
         self.menu = Button(master=self,x=920,y=10,w=50,h=50,color_background=None,color_border=None,on_click=self.on_click_boton1,on_click_param="menu",text=None,image_background="images\\botones\\jungle\\btn\\settings.png",font="Verdana",font_size=30,font_color=(0,255,0))
@@ -83,11 +85,15 @@ class FormPlay(Form):
             #ITEMS-------------------------------------------------------------
             self.lista_item_bala = Item_bala_list(self.administrador_json.balas)
             self.lista_item_vida_box = Item_vida_box_list(self.administrador_json.vida_box)
+            
             #BARRAS----VIDA----------SCORE------------TIEMPO-------BALAS------------
             self.barra_vida = Barra_vida()
             self.barra_score = Barra_score()
             self.barra_tiempo = Barra_tiempo()
             self.barra_proyectiles = Barra_proyectiles()
+            self.mensaje_win = Win()
+            self.mensaje_lose = Lose()
+            self.tiempo_mensaje = 0
 
             #MUSICA - Sonidos
             self.sound = pygame.mixer.Sound("PIXEL ADVENTURE\laser5.ogg")
@@ -107,20 +113,21 @@ class FormPlay(Form):
         
         for aux_boton in self.lista_widget:
             aux_boton.update(lista_eventos)
+        
         self.data_score = str(self.player.score)
+        self.data = (self.data_nombre,self.data_score)
+        #self.highscore.agregar(self.data)
+        
 
         if  self.player.lives == 0 or self.player.cronometro == 0:
-            self.data_score = str(self.player.score)
-            self.data = (self.data_nombre,self.data_score)
-            self.highscore.agregar(self.data)
-            self.set_active("you_lose")
-            
+            self.set_active("pantalla_ingreso")
+        
 
         if  self.enemigo_boss.fuera_pantalla:
             self.data_score = str(self.player.score)
             self.data = (self.data_nombre,self.data_score)
             self.highscore.agregar(self.data)
-            self.set_active("you_win")
+            self.set_active("pantalla_ingreso")
 
 
         if self.music_on_off:
@@ -186,7 +193,12 @@ class FormPlay(Form):
 
         if self.level == "nivel_2":
             self.voladores.draw(self.master_surface)
+        
 
         if DEBUG:
             pygame.draw.rect(self.master_surface,color=GREEN,rect=self.collition_l)
             pygame.draw.rect(self.master_surface,color=GREEN,rect=self.collition_r)
+        
+    
+    def info_player(self):
+        return self.data

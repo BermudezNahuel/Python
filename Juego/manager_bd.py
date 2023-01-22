@@ -27,16 +27,16 @@ class High_score:
                 print("La tabla highscore ya existe")    
 
 
-    def agregar(self,datos):
+    def agregar(self,info):
         '''
         Este metodo permite agregar informacion a la base de datos
         '''
         with sqlite3.connect("bd_highscore.db") as conexion:
             try:
-                conexion.execute("insert into personajes(nombre,puntaje) values (?,?)", datos) 
+                conexion.execute("insert into personajes(nombre,puntaje) values (?,?)", info) 
                 conexion.commit()# Actualiza los datos realmente en la tabla
             except:
-                print("Error")
+                print("Error al agregar")
 
 
     def consultar_scores(self):
@@ -69,15 +69,13 @@ class High_score:
 
     '''
 
-'''
+
 
 data = High_score()
 
-for i in range(2):
-    id = "1"+ str(i)
-    data.eliminar(id)
+data.crear()
 
-'''
+
 
 
 
